@@ -1,0 +1,21 @@
+---
+permalink: /index.html
+---
+{% extends "master.twig" %}
+{% block content %}
+<div class="col-md-8 col-md-offset-2">
+    <ul class="posts">
+        {% for post in posts %}
+        <h3><a href="{{ post.meta.permalink|raw }}">{{ post.meta.title }}</a></h3>
+        <span class="post-time">{{ post.meta.date|date('d M Y') }}</span>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% block footer %}
+<footer>
+    <div class="container text-center">
+
+    </div>
+</footer>
+{% endblock %}

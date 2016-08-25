@@ -1,0 +1,8 @@
+{
+    "require": {
+        "twig/twig": "~1.0",
+        "erusev/parsedown": "^1.6",
+        "illuminate/support": "^5.2",
+        "pagerange/metaparsedown": "^1.0"
+    }
+}

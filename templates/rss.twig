@@ -1,0 +1,20 @@
+---
+permalink: /rss.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>{{ config.title }}</title>
+        <link>{{ config.base_url }}/</link>
+        <description>{{ config.description }}</description>
+        {% for post in posts %}
+            <item>
+                <title>{{ post.meta.title|raw }}</title>
+                <link>{{ post.post_url }}</link>
+                <guid>{{ post.post_url }}</guid>
+                <pubDate>{{ post.meta.date|date('D, d M Y') }}</pubDate>
+                <description>{{ post.meta.title|raw }}</description>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>

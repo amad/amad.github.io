@@ -1,0 +1,212 @@
+@import 'font-awesome/font-awesome';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: open sans, sans-serif;
+  font-size: 1.7em;
+  line-height: 1.6em;
+  color: #3a4145;
+}
+
+header {
+  padding-bottom: 80px;
+}
+
+section {
+  display: block;
+  padding: 32px 0;
+
+  .col-md-6 {
+    margin-bottom: 16px;
+  }
+}
+
+.tags {
+  line-height: 1.7em;
+}
+
+.comments {
+  padding-top: 64px;
+}
+
+.iam {
+  color: #666666;
+  font-size: 1.2em;
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .name {
+    color: #e34c26;
+  }
+
+  a {
+    margin-right: 16px;
+  }
+}
+
+.posts {
+  margin: 48px 0;
+
+  a {
+    color: #222222;
+  }
+
+  h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+}
+
+span.post-time {
+  color: #9eabb3;
+  font-size: 0.8em;
+  margin-bottom: 48px;
+}
+
+.post {
+  padding-top: 80px;
+
+  blockquote {
+    padding: 0 20px;
+    margin: 20px 0;
+
+    p {
+      color: #666;
+      font-style: italic;
+      font-size: 1em;
+    }
+  }
+
+  p {
+    margin: 24px 0;
+  }
+
+  h1 {
+    font-weight: bold;
+    color: #222;
+
+    a {
+      color: #222;
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 48px auto 24px;
+  }
+
+  h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 48px auto 24px;
+    line-height: 1.25;
+  }
+}
+
+p > code {
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.8em;
+  background-color: rgba(27, 31, 35, 0.05);
+  color: #000000;
+  vertical-align: top;
+}
+
+footer {
+  margin: 56px;
+
+  a {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+}
+
+.prettyprint {
+  background-color: #f6f8fa;
+  padding: 1em 0.9em !important;
+  border: 0 !important;
+  padding: 2em;
+  font-size: 0.7em;
+  line-height: 1.5em;
+  margin: 2em 0;
+  border-radius: 5px;
+}
+
+.pln {
+  color: #333;
+}
+
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #cccccc;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  padding-left: 1em;
+  background-color: #fff;
+  list-style-type: decimal;
+}
+
+@media screen {
+  pre {
+    .str {
+      color: #183691;
+    }
+    .kwd {
+      color: #a71d5d;
+    }
+    .com {
+      color: #969896;
+    }
+    .typ {
+      color: #0086b3;
+    }
+    .lit {
+      color: #0086b3;
+    }
+    .pun {
+      color: #333;
+    }
+    .opn {
+      color: #333;
+    }
+    .clo {
+      color: #333;
+    }
+    .tag {
+      color: #000080;
+    }
+    .atn {
+      color: #795da3;
+    }
+    .atv {
+      color: #183691;
+    }
+    .dec {
+      color: #333;
+    }
+    .var {
+      color: #008080;
+    }
+    .fun {
+      color: #900;
+    }
+  }
+}

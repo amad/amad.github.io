@@ -1,0 +1,48 @@
+#!/usr/bin/env php
+<?php
+
+use Pagerange\Markdown\MetaParsedown;
+use Symfony\Component\Yaml\Yaml;
+
+require_once 'vendor/autoload.php';
+
+$config = Yaml::parseFile('config.yml');
+$twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'));
+$markdownParser = new MetaParsedown;
+
+$posts = collect(\glob('markdown/*.md'))
+    ->map(function ($file) use ($config, $markdownParser) {
+        $content = \file_get_contents($file);
+        $meta = $markdownParser->meta($content);
+
+        return [
+            'config' => $config,
+            'meta' => $meta,
+            'post_url' => $config['base_url'] . $meta['permalink'],
+            'content' => $markdownParser->text($content)
+        ];
+    })
+    ->sortByDesc('meta.date')
+    ->each(function ($post) use ($twig) {
+        if (isset($post['meta']['redirect_from'])) {
+            \file_put_contents(
+                '.' . $post['meta']['redirect_from'],
+                $twig->loadTemplate('redirect.twig')->render($post)
+            );
+        }
+        \file_put_contents('.' . $post['meta']['permalink'], $twig->loadTemplate('post.twig')->render($post));
+    });
+
+collect($config['templates'])
+    ->map(function ($path) {
+        return \file_get_contents('templates/' . $path);
+    })
+    ->each(function ($templateContent) use ($twig, $markdownParser, $posts, $config) {
+        $meta = $markdownParser->meta($templateContent);
+        $template = \trim($markdownParser->stripMeta($templateContent));
+
+        \file_put_contents(
+            \ltrim($meta['permalink'], '/'),
+            $twig->createTemplate($template)->render(\compact('config', 'posts'))
+        );
+    });

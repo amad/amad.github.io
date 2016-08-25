@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tips for Schemaless Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Recommendations that can be taken into account before going schemaless">
+    <meta name="keywords" content="schemaless, lessons learned">
+    <meta name="author" content="Ahmad Samiei">
+    <link rel="dns-prefetch" href="https://google-analytics.com">
+    <link rel="alternate" href="/" hreflang="en-us" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+        <h1>Tips for Schemaless Design</h1>
+        <span class="post-time"><time datetime="2017-03-06">06 Mar 2017</time></span>
+        <p>With schemaless databases, you benefit from transparent database adjustments. They do not enforce any structure for your data, but in most cases, you will have a reasonably consistent model. The software industry is getting agiler also means that we are dealing with more ever-changing entities. And probably that is one of the reasons that schemaless databases are a good fit.</p>
+<p>Schemaless databases have been around for a while, but comparing with the Relational model, they are still quite new, and a lot of development teams do not understand the tradeoffs.</p>
+<p>I want to list a few things that I learned working on schemaless projects in the past few years.</p>
+<p>In most cases, there is a consistent model (at least in your code!). If your project is not one of the exceptions, most of these recommendations are going to help you down the road. But some of them might differ in some cases.</p>
+<h2>While starting:</h2>
+<ul>
+<li>Think about application requirements. You don't have to define your model, but you should have a rough idea of it.</li>
+<li>Find a right performance balance. Do you want to have read optimized model or write optimized model?</li>
+<li>Make sure your team understands shard keys, and you know how your database is going to handle sharding and partitioning. Databases are using similar patterns but implemented differently.</li>
+<li>Investigate analytics and reporting expectations.</li>
+<li>Make sure the ops team does support your database technology.</li>
+<li>Be careful with your shard keys from the beginning. Understand performance impact of your model on distributed systems.</li>
+</ul>
+<h2>While building:</h2>
+<ul>
+<li>It is better if your code/API can enforce an explicit schema because your database is not going to give you an error when your data does not fit your implicit schema. This way your code is going to make less assumptions about the data structure.</li>
+<li>If you have downstream dependencies, consider using triggers (event-streams in some databases). Schemaless can be a perfect source-of-truth data store when using triggers. But do not forget to document downstream dependencies, their requirements, integration method, and the way you are notifying them. It will help you in change management, especially with schema changes.</li>
+<li>You can migrate data during reading or migrate all data in one go (Some databases have tools for that. However in some cases, you have to build an ETL process). Removing support for the old data structure from your code is essential after migration.</li>
+<li>Wrap your schemaless data with determined methods wherever you want to use your data. You want to make sure fewer part of the software is dependent on the structure. Data access layer is the first place to start.</li>
+<li>Do not mix custom fields or meta-information with your implicit schema (ex. fields that are only to display something in the UI, any information that base software is not using. dates for instance). An easy way is to put them under a meta information namespace in your JSON object.</li>
+<li>If you have to deal with non-uniform data where fields differ between individual records, (events are a good example), try to add sub-types. Thus, it is easier to know what properties are expected depending on the sub-type. If you have many changes in your data structure and it is natural for your project, you can think about versioning, so your code can behave base on version instead of attributes.</li>
+<li>Don't get paranoid about schema; it is going to be fine.</li>
+</ul>
+    </article>
+    <div class="col-md-8 col-md-offset-2">
+        <hr />
+        <a
+            href="//twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://samiei.org/blog/going-schemaless.html"
+            data-via="Ahmad_Samiei"
+            data-hashtags="schemaless,lessonslearned"
+            data-dnt="true"
+            data-counturl="https://samiei.org/blog/going-schemaless.html"
+        >
+            Tweet
+        </a>
+        <a
+            class="twitter-follow-button"
+            href="https://twitter.com/Ahmad_Samiei"
+        >
+            Follow @Ahmad_Samiei
+        </a>
+    </div>
+            <div class="col-md-8 col-md-offset-2 comments">
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "https://samiei.org/blog/going-schemaless.html";
+                    this.page.identifier = "/blog/going-schemaless.html";
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://samiei-org.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        </div>
+</div>
+
+    <footer>
+    <div class="container text-center">
+        <a class="text-primary text-uppercase" href="/">MORE POSTS</a>
+    </div>
+</footer>
+<script>
+    var elements = document.body.getElementsByTagName('pre');
+    for (var i = 0; i < elements.length; i++) {elements[i].setAttribute('class', 'prettyprint');}
+</script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true" defer="defer"></script>
+<script id="dsq-count-scr" src="//samiei-org.disqus.com/count.js" async></script>
+<script>
+    if (window.location.hostname !== 'localhost') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-69085808-1', 'auto');
+        ga('send', 'pageview');
+    }
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>

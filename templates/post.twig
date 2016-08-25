@@ -1,0 +1,50 @@
+{% extends "master.twig" %}
+{% block header %}{% endblock %}
+{% block content %}
+    <article class="post col-md-8 col-md-offset-2">
+        <h1>{{ meta.title }}</h1>
+        <span class="post-time"><time datetime="{{ meta.date|date('Y-m-d') }}">{{ meta.date|date('d M Y') }}</time></span>
+        {{ content|raw }}
+    </article>
+    <div class="col-md-8 col-md-offset-2">
+        <hr />
+        <a
+            href="//twitter.com/share"
+            class="twitter-share-button"
+            data-url="{{ post_url }}"
+            data-via="{{ config.twitter_handle }}"
+            data-hashtags="{{ meta.keywords|replace({' ':  ''}) }}"
+            data-dnt="true"
+            data-counturl="{{ post_url }}"
+        >
+            Tweet
+        </a>
+        <a
+            class="twitter-follow-button"
+            href="https://twitter.com/{{ config.twitter_handle }}"
+        >
+            Follow @{{ config.twitter_handle }}
+        </a>
+    </div>
+    {% if not meta.disable_comments %}
+        <div class="col-md-8 col-md-offset-2 comments">
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "{{ post_url }}";
+                    this.page.identifier = "{{ meta.permalink }}";
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://samiei-org.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block footer %}
+    {% include 'blog_footer.twig' %}
+{% endblock %}

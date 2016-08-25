@@ -1,0 +1,10 @@
+title: Ahmad Samiei
+author: Ahmad Samiei
+description: Ahmad Samiei blog
+base_url: https://samiei.org
+twitter_handle: Ahmad_Samiei
+templates:
+  - rss.twig
+  - about.twig
+  - blog.twig
+  - sitemap.twig

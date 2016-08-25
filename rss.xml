@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Ahmad Samiei</title>
+        <link>https://samiei.org/</link>
+        <description>Ahmad Samiei blog</description>
+                    <item>
+                <title>Guide to effective pair programming</title>
+                <link>https://samiei.org/blog/effective-pair-programming.html</link>
+                <guid>https://samiei.org/blog/effective-pair-programming.html</guid>
+                <pubDate>Wed, 30 May 2018</pubDate>
+                <description>Guide to effective pair programming</description>
+            </item>
+                    <item>
+                <title>Tips for Schemaless Design</title>
+                <link>https://samiei.org/blog/going-schemaless.html</link>
+                <guid>https://samiei.org/blog/going-schemaless.html</guid>
+                <pubDate>Mon, 06 Mar 2017</pubDate>
+                <description>Tips for Schemaless Design</description>
+            </item>
+                    <item>
+                <title>Git friendly Terminal</title>
+                <link>https://samiei.org/blog/git-friendly-terminal.html</link>
+                <guid>https://samiei.org/blog/git-friendly-terminal.html</guid>
+                <pubDate>Thu, 09 Jun 2016</pubDate>
+                <description>Git friendly Terminal</description>
+            </item>
+            </channel>
+</rss>
