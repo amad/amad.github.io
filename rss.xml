@@ -5,6 +5,13 @@
         <link>https://samiei.org/</link>
         <description>Ahmad Samiei blog</description>
                     <item>
+                <title>Do not catch Throwable in the business logic</title>
+                <link>https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html</link>
+                <guid>https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html</guid>
+                <pubDate>Tue, 16 Oct 2018</pubDate>
+                <description>Do not catch Throwable in the business logic</description>
+            </item>
+                    <item>
                 <title>Guide to effective pair programming</title>
                 <link>https://samiei.org/blog/effective-pair-programming.html</link>
                 <guid>https://samiei.org/blog/effective-pair-programming.html</guid>

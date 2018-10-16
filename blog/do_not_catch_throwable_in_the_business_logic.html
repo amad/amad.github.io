@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Do not catch Throwable in the business logic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="As much as it does not make sense to catch Throwable in the business logic of your application, there are some use cases for infrastructure layer.">
+    <meta name="keywords" content="php,throwable,exception handler,error handling">
+    <meta name="author" content="Ahmad Samiei">
+    <link rel="dns-prefetch" href="https://google-analytics.com">
+    <link rel="alternate" href="/" hreflang="en-us" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+            <article class="post col-md-8 col-md-offset-2">
+        <h1>Do not catch Throwable in the business logic</h1>
+        <span class="post-time"><time datetime="2018-10-16">16 Oct 2018</time></span>
+        <p>PHP7 (Dec 2015) has introduced a new interface called <code>Throwable</code>. <code>\Throwable</code> is the base interface for any object that can be thrown via a throw statement in PHP.</p>
+<p>PHP7 also converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables.</p>
+<p>Similar to the throwable notion in Java, both <code>Exception</code> and <code>Error</code> classes are a subtype of the <code>Throwable</code> interface. While unlike PHP, in Java Throwable is a class which caused a few issues that are known as bad practice these days. For instance, in Java, you can extend throwable or even throw it directly.</p>
+<p>On the other hand, PHP decided to prevent that issue by making Throwable an interface. Interestingly, they also made it <a href="https://github.com/php/php-src/blob/9003d8a4cfe810b9222273a36b9be89dda94a35b/Zend/zend_exceptions.c#L49">impossible to implement the Throwable interface directly</a>. Which means you have to extend <code>Error</code>, or <code>Exception</code> class to create a custom exception. That way, you have all the benefits of having the Throwable interface without dealing with all bad possible use cases.</p>
+<p>While it has been a long time that we have this new interface and despite some articles trying to help developers to understand what this change means at release time, some developers are still abusing Throwable interface by catching it in their business logic.</p>
+<p>With some exceptions, We never want to catch <code>\Throwable</code> in our business logic. Because it covers Error subclasses including <code>TypeError</code> (When the argument or return type doesn't match), <code>CompileError</code> and <code>ParseError</code> (Syntax errors. When can't parse/eval the code) which are not something that you want to ignore in your business logic.</p>
+<p>When it comes to business logic, The best practice is to be more specific with what type of exceptions you want to catch because must of the times you are not going to handle them in the same way, that way it makes your code easier to follow for the reader and leaves fewer surprises for refactoring it in the future.</p>
+<p>Usually, it is a bad sign, but in some cases, you may want to catch all exceptions. For instance, you only have one exception path. Another case is when you are designing a multi-layered architecture, and all you care is to provide a custom error message for the subsequent layer. However, don't forget that in all these cases what you need is catching Exception and not Throwable simply because it also covers Error.</p>
+<blockquote>
+<p>Note: In PHP 7.1 and later, a catch block may specify multiple exceptions using the pipe (|) character. This is useful for when different exceptions from different class hierarchies are handled the same.</p>
+</blockquote>
+<pre><code class="language-php">try {
+    // some code
+} catch (FirstException | SecondException $e) {
+    // handle first and second exceptions
+} finally {
+    // executed after the try and catch blocks
+}</code></pre>
+<p>The current hierarchy looks like below:</p>
+<pre><code class="language-yaml">Throwable
+    Error
+        ArithmeticError
+            DivisionByZeroError
+        AssertionError
+        CompileError
+            ParseError
+        TypeError
+            ArgumentCountError
+    Exception
+        ClosedGeneratorException
+        DOMException
+        ErrorException
+        JsonException
+        LogicException
+            BadFunctionCallException
+                BadMethodCallException
+            DomainException
+            InvalidArgumentException
+            LengthException
+            OutOfRangeException
+        PharException
+        ReflectionException
+        RuntimeException
+            OutOfBoundsException
+            OverflowException
+            PDOException
+            RangeException
+            UnderflowException
+            UnexpectedValueException
+        SodiumException</code></pre>
+<h2>When do we use Throwable</h2>
+<h3>Exception handlers</h3>
+<p>The first use case is obviously for exception handlers. A PHP7+ exception handler must have the following signature <code>void handler( Throwable $exception )</code> otherwise when a subclass of Error is thrown, a PHP Fatal error will be issued with an &quot;Uncaught Error ...&quot; message. (Unless that is what you want.) Keep in mind that you also have the option to remove the type <code>void handler( $exception )</code> which is typical for PHP5+ exception handlers.</p>
+<h3>Custom exception interfaces</h3>
+<p>The second place where you must use it is when you are defining an interface for your custom exception classes. If you are going to create an interface for a custom exception, make sure you extend the Throwable interface.</p>
+<h2>When do we catch Throwable</h2>
+<p>You can catch <code>Throwable</code> when both <code>Error</code> and <code>Exception</code> are handled the same, and you are writing a framework, logging or debugging or profiling library, or anything that parses or evaluates the PHP code.</p>
+<p>Another use case would be writing a fail-safe code where reliability is essential. However, in this case, most of the time what you want is to rethrow the exception. I'll show you an example of it later.</p>
+<p>So, as much as it doesn't make sense to catch Throwable in the business logic of your application, there are some use cases for infrastructure layer.</p>
+<h3>Examples</h3>
+<p>We can review a few open source packages and see what they are doing with the Throwable interface to have a better understanding of these valid use cases.</p>
+<h4>Custom exception interface:</h4>
+<p>Most of the Symfony components are defining their <code>ExceptionInterface</code>, and these interfaces are extending <code>Throwable</code> as they should do. As I mentioned earlier, that is one of the places where you have to use Throwable to comply with the language typing discipline and avoid runtime errors.</p>
+<pre><code class="language-php">interface ExceptionInterface extends \Throwable
+{
+}</code></pre>
+<p><a href="https://github.com/symfony/security/blob/f713eea2db349c47ac821e0cb67fbd6128fd9851/Core/Exception/ExceptionInterface.php#L19"><i class="fa fa-github"></i> Source</a></p>
+<h4>Handling errors (ex. For logging purpose):</h4>
+<p>Another place where Symfony is using Throwable is the <code>LoggingMiddleware</code>. This middleware is catching the Throwable, and re-throwing it after logging it. That is an excellent example of seeing how you might catch Throwable for the sake of providing a custom log/metric/event. In this case, you have to rethrow the exception immediately.</p>
+<pre><code class="language-php">try {
+    $result = $next($message);
+} catch (\Throwable $e) {
+    $this-&gt;logger-&gt;warning('An exception occurred while handling message {class}', array_merge(
+        $this-&gt;createContext($message),
+        array('exception' =&gt; $e)
+    ));
+    throw $e;
+}</code></pre>
+<p><a href="https://github.com/symfony/symfony/blob/2b9c142f07b7dbc11d4d392b77629fa91a5dcb41/src/Symfony/Component/Messenger/Middleware/LoggingMiddleware.php#L37"><i class="fa fa-github"></i> Source</a></p>
+<h4>Fail-safe component:</h4>
+<p>The Symfony Messenger is an excellent example of a legit use case to catch Throwable.
+The AmqpReceiver can re-queue the message when it catches uncaught
+throwable from a handler. So a user using this client won't miss any message even when a user made a boo-boo in his handler code.</p>
+<pre><code class="language-php">try {
+    $handler($this-&gt;serializer-&gt;decode(array(
+        'body' =&gt; $AMQPEnvelope-&gt;getBody(),
+        'headers' =&gt; $AMQPEnvelope-&gt;getHeaders(),
+    )));
+    $this-&gt;connection-&gt;ack($AMQPEnvelope);
+} catch (RejectMessageExceptionInterface $e) {
+    $this-&gt;connection-&gt;reject($AMQPEnvelope);
+    throw $e;
+} catch (\Throwable $e) {
+    $this-&gt;connection-&gt;nack($AMQPEnvelope, AMQP_REQUEUE);
+    throw $e;
+} finally {
+    if (\function_exists('pcntl_signal_dispatch')) {
+        pcntl_signal_dispatch();
+    }
+}</code></pre>
+<p><a href="https://github.com/symfony/symfony/blob/766a82bddf8f70f10840393bc348937f3532a7a5/src/Symfony/Component/Messenger/Transport/AmqpExt/AmqpReceiver.php#L65"><i class="fa fa-github"></i> Source</a></p>
+<p>As you can see, Symfony is rethrowing the exception immediately after re-queuing the message.</p>
+<h4>Custom errors</h4>
+<p>I also found another case where Symfony does catch Throwable.</p>
+<p>The ConsoleApplication catches Throwable and converts it into Symfony <code>FatalThrowableError</code> which is essentially the same, and it is there just for the sake of Symfony internal error handling and also for the debug component.</p>
+<pre><code class="language-php">try {
+    $bundle-&gt;registerCommands($this);
+} catch (\Exception $e) {
+    $this-&gt;registrationErrors[] = $e;
+} catch (\Throwable $e) {
+    $this-&gt;registrationErrors[] = new FatalThrowableError($e);
+}</code></pre>
+<p><a href="https://github.com/symfony/symfony/blob/64727c182205800a734f046dac8688f1ed6dea3e/src/Symfony/Bundle/FrameworkBundle/Console/Application.php#L179"><i class="fa fa-github"></i> Source</a></p>
+<p>Since Laravel is using Symfony HttpKernel and Debug components, they are also transforming Throwable into Symfony <code>FatalThrowableError</code>.</p>
+<p>Other than that, Laravel is very careful about Throwable. I found a few places where they use it for type hinting.</p>
+<p>Slim framework only catches Throwable in its request handler. All it does is passing it to the registered error handler which again is a valid use case.</p>
+<pre><code class="language-php">try {
+    $response = $this-&gt;callMiddlewareStack($request, $response);
+} catch (Exception $e) {
+    $response = $this-&gt;handleException($e, $request, $response);
+} catch (Throwable $e) {
+    $response = $this-&gt;handlePhpError($e, $request, $response);
+}</code></pre>
+<p><a href="https://github.com/slimphp/Slim/blob/6d347477d09ab7910e625cee74c8108b7b85c7f9/Slim/App.php#L409"><i class="fa fa-github"></i> Source</a></p>
+<h3>More examples from packages</h3>
+<p>Symfony also uses Throwable in a few places just as a workaround to avoid include warnings.</p>
+<p>I assume it is just a performance hack. They could do a few checks for file path and permission to make sure you can include the file. While doing it in framework level might be reasonable (assuming there is huge performance gain here). Please don't use this trick for silencing errors in your ever-changing application layer.</p>
+<pre><code class="language-php">try {
+    $oldContainer = include $cache-&gt;getPath();
+} catch (\Throwable $e) {
+} catch (\Exception $e) {
+} finally {
+    error_reporting($errorLevel);
+}</code></pre>
+<p><a href="https://github.com/symfony/symfony/blob/6b8e6ce73aaec628656750c5e7370eba9c4c7756/src/Symfony/Component/HttpKernel/Kernel.php#L523"><i class="fa fa-github"></i> Source</a></p>
+<p>One interesting use case is the Laravel View component. The render method is catching Throwable and flushing the state before re-throwing it.</p>
+<p>Clearly, it is a very likely scenario for a template component to receive an Error on render step and that is a reasonable use case. Don't forget that the code is still re-throwing the exception/error.</p>
+<p>But the code is also catching Exception here which seems unnecessary because they are making the same call to the flush method. Well, that is just a trick to keep this code PHP5+ compatible because the Throwable interface doesn't exist before PHP7. Perhaps they are going to remove it since the current version of Laravel doesn't support PHP5 anymore.</p>
+<pre><code class="language-php">try {
+    $contents = $this-&gt;renderContents();
+    $response = isset($callback) ? call_user_func($callback, $this, $contents) : null;
+    $this-&gt;factory-&gt;flushStateIfDoneRendering();
+    return ! is_null($response) ? $response : $contents;
+} catch (Exception $e) {
+    $this-&gt;factory-&gt;flushState();
+    throw $e;
+} catch (Throwable $e) {
+    $this-&gt;factory-&gt;flushState();
+    throw $e;
+}</code></pre>
+<p><a href="https://github.com/laravel/framework/blob/9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6/src/Illuminate/View/View.php#L104"><i class="fa fa-github"></i> Source</a></p>
+<p>Here is another place where Laravel is catching Throwable. And it is a good example to demonstrate why it is a bad idea to catch Throwable in your code.</p>
+<p>This time it just looks like a hack to avoid TypeError. This way the code can handle Exception in case of supplying invalid or unrecognized timezone and possible TypeError since this parameter is dynamically typed and there is no null safe operator here to prevent passing null value. Perhaps we can call it lazy writing since they could do a simple type check here.</p>
+<p>The point is that it is hard for the reader to understand the intention of the original author. Please don't use similar hacks on your application logic if you are not the only developer working on the code. In this case, it was one call to an internal PHP method, in your case you might have a call to an ever-changing domain level code.</p>
+<pre><code class="language-php">try {
+    new DateTimeZone($value);
+} catch (Exception $e) {
+    return false;
+} catch (Throwable $e) {
+    return false;
+}</code></pre>
+<p><a href="https://github.com/laravel/framework/blob/ac745730492ef23a04ce614228d11e496feb625d/src/Illuminate/Validation/Concerns/ValidatesAttributes.php#L1502"><i class="fa fa-github"></i> Source</a></p>
+<h2>Conclusion</h2>
+<p>You should not catch <code>Throwable</code> in the business logic of your application. It is the responsibility of the infrastructure layer to deal with <code>Error</code>.</p>
+    </article>
+    <div class="col-md-8 col-md-offset-2">
+        <hr />
+        <a
+            href="//twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html"
+            data-via="Ahmad_Samiei"
+            data-hashtags="php,throwable,exceptionhandler,errorhandling"
+            data-dnt="true"
+            data-counturl="https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html"
+        >
+            Tweet
+        </a>
+        <a
+            class="twitter-follow-button"
+            href="https://twitter.com/Ahmad_Samiei"
+        >
+            Follow @Ahmad_Samiei
+        </a>
+    </div>
+            <div class="col-md-8 col-md-offset-2 comments">
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = "https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html";
+                    this.page.identifier = "/blog/do_not_catch_throwable_in_the_business_logic.html";
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://samiei-org.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        </div>
+</div>
+
+    <footer>
+    <div class="container text-center">
+        <a class="text-primary text-uppercase" href="/">MORE POSTS</a>
+    </div>
+</footer>
+<script>
+    var elements = document.body.getElementsByTagName('pre');
+    for (var i = 0; i < elements.length; i++) {elements[i].setAttribute('class', 'prettyprint');}
+</script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true" defer="defer"></script>
+<script id="dsq-count-scr" src="//samiei-org.disqus.com/count.js" async></script>
+<script>
+    if (window.location.hostname !== 'localhost') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-69085808-1', 'auto');
+        ga('send', 'pageview');
+    }
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>

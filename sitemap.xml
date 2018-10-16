@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://samiei.org/</loc>
-        <lastmod>2018-25-09</lastmod>
+        <lastmod>2018-18-10</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://samiei.org/index.html</loc>
-        <lastmod>2018-25-09</lastmod>
+        <lastmod>2018-18-10</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://samiei.org/about.html</loc>
-        <lastmod>2018-25-09</lastmod>
+        <lastmod>2018-18-10</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+        <url>
+        <loc>https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html</loc>
+        <lastmod>2018-16-10</lastmod>
         <changefreq>yearly</changefreq>
     </url>
         <url>
