@@ -1,14 +1,12 @@
 ---
-title: Do not catch Throwable in the business logic
+title: Why you should not catch Throwable in the business logic
 description: As much as it does not make sense to catch Throwable in the business logic of your application, there are some use cases for infrastructure layer.
 keywords: php,throwable,exception handler,error handling
 date: 2018-10-16
 permalink: "/blog/do_not_catch_throwable_in_the_business_logic.html"
 ---
 
-PHP7 (Dec 2015) has introduced a new interface called `Throwable`. `\Throwable` is the base interface for any object that can be thrown via a throw statement in PHP.
-
-PHP7 also converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables.
+PHP7 converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables. The new interface called `Throwable` which is the base interface for any object that can be thrown via a throw statement.
 
 Similar to the throwable notion in Java, both `Exception` and `Error` classes are a subtype of the `Throwable` interface. While unlike PHP, in Java Throwable is a class which caused a few issues that are known as bad practice these days. For instance, in Java, you can extend throwable or even throw it directly.
 

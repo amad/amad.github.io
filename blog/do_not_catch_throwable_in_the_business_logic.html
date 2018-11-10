@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Do not catch Throwable in the business logic</title>
+    <title>Why you should not catch Throwable in the business logic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="As much as it does not make sense to catch Throwable in the business logic of your application, there are some use cases for infrastructure layer.">
     <meta name="keywords" content="php,throwable,exception handler,error handling">
@@ -40,12 +40,11 @@
 <div class="container">
         <div class="row justify-content-center mt-4">
         <article class="post col-10">
-            <h1>Do not catch Throwable in the business logic</h1>
+            <h1>Why you should not catch Throwable in the business logic</h1>
             <span class="post-time text-muted font-weight-light text-monospace">
                 <time datetime="2018-10-16">16 Oct 2018</time>
             </span>
-            <p>PHP7 (Dec 2015) has introduced a new interface called <code>Throwable</code>. <code>\Throwable</code> is the base interface for any object that can be thrown via a throw statement in PHP.</p>
-<p>PHP7 also converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables.</p>
+            <p>PHP7 converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables. The new interface called <code>Throwable</code> which is the base interface for any object that can be thrown via a throw statement.</p>
 <p>Similar to the throwable notion in Java, both <code>Exception</code> and <code>Error</code> classes are a subtype of the <code>Throwable</code> interface. While unlike PHP, in Java Throwable is a class which caused a few issues that are known as bad practice these days. For instance, in Java, you can extend throwable or even throw it directly.</p>
 <p>On the other hand, PHP decided to prevent that issue by making Throwable an interface. Interestingly, they also made it <a href="https://github.com/php/php-src/blob/9003d8a4cfe810b9222273a36b9be89dda94a35b/Zend/zend_exceptions.c#L49">impossible to implement the Throwable interface directly</a>. Which means you have to extend <code>Error</code>, or <code>Exception</code> class to create a custom exception. That way, you have all the benefits of having the Throwable interface without dealing with all bad possible use cases.</p>
 <p>While it has been a long time that we have this new interface and despite some articles trying to help developers to understand what this change means at release time, some developers are still abusing Throwable interface by catching it in their business logic.</p>

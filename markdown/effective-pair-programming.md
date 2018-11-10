@@ -6,7 +6,7 @@ date: 2018-05-30
 permalink: "/blog/effective-pair-programming.html"
 ---
 
-It is important to understand how and when to do pair programming. I shared a copy of a document that I wrote to show the best practices of pair programming to my team. We are using it in multiple teams.
+It is important to understand how and when to do pair programming. I shared a copy of a document that I wrote to show the best practices of pair programming to my team. We are using it successfully in multiple teams now.
 
 Read the document here: [https://github.com/amad/pair-programming](https://github.com/amad/pair-programming)
 
