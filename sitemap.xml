@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://samiei.org/</loc>
-        <lastmod>2018-10-11</lastmod>
+        <loc>https://amad.github.io/</loc>
+        <lastmod>2019-05-02</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://samiei.org/index.html</loc>
-        <lastmod>2018-10-11</lastmod>
+        <loc>https://amad.github.io/index.html</loc>
+        <lastmod>2019-05-02</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://samiei.org/about.html</loc>
-        <lastmod>2018-10-11</lastmod>
+        <loc>https://amad.github.io/about.html</loc>
+        <lastmod>2019-05-02</lastmod>
         <changefreq>yearly</changefreq>
     </url>
         <url>
-        <loc>https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html</loc>
+        <loc>https://amad.github.io/blog/do_not_catch_throwable_in_the_business_logic.html</loc>
         <lastmod>2018-16-10</lastmod>
         <changefreq>yearly</changefreq>
     </url>
         <url>
-        <loc>https://samiei.org/blog/effective-pair-programming.html</loc>
+        <loc>https://amad.github.io/blog/effective-pair-programming.html</loc>
         <lastmod>2018-30-05</lastmod>
         <changefreq>yearly</changefreq>
     </url>
         <url>
-        <loc>https://samiei.org/blog/going-schemaless.html</loc>
+        <loc>https://amad.github.io/blog/going-schemaless.html</loc>
         <lastmod>2017-06-03</lastmod>
         <changefreq>yearly</changefreq>
     </url>
         <url>
-        <loc>https://samiei.org/blog/git-friendly-terminal.html</loc>
+        <loc>https://amad.github.io/blog/git-friendly-terminal.html</loc>
         <lastmod>2016-09-06</lastmod>
         <changefreq>yearly</changefreq>
     </url>
