@@ -9,9 +9,10 @@ require_once 'vendor/autoload.php';
 $config = Yaml::parseFile('config.yml');
 $twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'));
 $markdownParser = new MetaParsedown;
+$assetHash = \md5(\file_get_contents(__DIR__ . '/../assets/css/app.min.css'));
 
 $posts = collect(\glob('markdown/*.md'))
-    ->map(function ($file) use ($config, $markdownParser) {
+    ->map(function ($file) use ($config, $markdownParser, $assetHash) {
         $content = \file_get_contents($file);
         $meta = $markdownParser->meta($content);
 
@@ -19,7 +20,8 @@ $posts = collect(\glob('markdown/*.md'))
             'config' => $config,
             'meta' => $meta,
             'post_url' => $config['base_url'] . $meta['permalink'],
-            'content' => $markdownParser->text($content)
+            'content' => $markdownParser->text($content),
+            'assetHash' => $assetHash,
         ];
     })
     ->sortByDesc('meta.date')
@@ -37,12 +39,12 @@ collect($config['templates'])
     ->map(function ($path) {
         return \file_get_contents('templates/' . $path);
     })
-    ->each(function ($templateContent) use ($twig, $markdownParser, $posts, $config) {
+    ->each(function ($templateContent) use ($twig, $markdownParser, $posts, $config, $assetHash) {
         $meta = $markdownParser->meta($templateContent);
         $template = \trim($markdownParser->stripMeta($templateContent));
 
         \file_put_contents(
             \ltrim($meta['permalink'], '/'),
-            $twig->createTemplate($template)->render(\compact('config', 'posts'))
+            $twig->createTemplate($template)->render(\compact('config', 'posts', 'assetHash'))
         );
     });
