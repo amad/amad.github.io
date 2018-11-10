@@ -1,18 +1,9 @@
 @import 'font-awesome/font-awesome';
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   font-family: open sans, sans-serif;
-  font-size: 1.7em;
-  line-height: 1.6em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3a4145;
-}
-
-header {
-  padding-bottom: 80px;
 }
 
 section {
@@ -32,63 +23,37 @@ section {
   padding-top: 64px;
 }
 
-.iam {
-  color: #666666;
-  font-size: 1.2em;
-
-  h1 {
-    font-size: 1.2em;
-  }
-
-  .name {
-    color: #e34c26;
-  }
-
-  a {
-    margin-right: 16px;
-  }
-}
-
 .posts {
-  margin: 48px 0;
-
   a {
     color: #222222;
-  }
-
-  h1 {
-    font-size: 1.6em;
-    font-weight: bold;
   }
 }
 
 span.post-time {
-  color: #9eabb3;
   font-size: 0.8em;
-  margin-bottom: 48px;
 }
 
 .post {
-  padding-top: 80px;
+  line-height: 1.75;
 
   blockquote {
     padding: 0 20px;
     margin: 20px 0;
+    border-left: 5px solid #eee;
 
     p {
       color: #666;
       font-style: italic;
-      font-size: 1em;
     }
   }
 
   p {
-    margin: 24px 0;
+    margin: 17px 0;
+    font-size: 1.1em;
   }
 
   h1 {
     font-weight: bold;
-    color: #222;
 
     a {
       color: #222;
@@ -96,36 +61,18 @@ span.post-time {
     }
   }
 
-  h2 {
-    font-weight: bold;
-    font-size: 1.3em;
-    margin: 48px auto 24px;
-  }
-
-  h3 {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 48px auto 24px;
-    line-height: 1.25;
+  h2,h3,h4,h5 {
+    margin: 48px auto 16px;
   }
 }
 
 p > code {
   padding: 0.1em 0.4em;
   border-radius: 3px;
-  font-size: 0.8em;
+  font-size: 0.9em;
   background-color: rgba(27, 31, 35, 0.05);
   color: #000000;
   vertical-align: top;
-}
-
-footer {
-  margin: 56px;
-
-  a {
-    font-weight: bold;
-    font-size: 1.3em;
-  }
 }
 
 .prettyprint {
@@ -133,7 +80,7 @@ footer {
   padding: 1em 0.9em !important;
   border: 0 !important;
   padding: 2em;
-  font-size: 0.7em;
+  font-size: 0.9em;
   line-height: 1.5em;
   margin: 2em 0;
   border-radius: 5px;

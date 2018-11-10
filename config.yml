@@ -1,8 +1,9 @@
 title: Ahmad Samiei
 author: Ahmad Samiei
-description: Ahmad Samiei blog
+description: Ahmad Samiei technical blog
 base_url: https://samiei.org
 twitter_handle: Ahmad_Samiei
+keywords: Ahmad Samiei, amad, blog, development, software engineering, software design, design patterns, best practices, software architecture
 templates:
   - rss.twig
   - about.twig

@@ -3,7 +3,7 @@
     <channel>
         <title>Ahmad Samiei</title>
         <link>https://samiei.org/</link>
-        <description>Ahmad Samiei blog</description>
+        <description>Ahmad Samiei technical blog</description>
                     <item>
                 <title>Do not catch Throwable in the business logic</title>
                 <link>https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html</link>

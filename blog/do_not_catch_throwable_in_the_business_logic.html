@@ -10,7 +10,7 @@
     <meta name="author" content="Ahmad Samiei">
     <link rel="dns-prefetch" href="https://google-analytics.com">
     <link rel="alternate" href="/" hreflang="en-us" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
@@ -18,13 +18,33 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 </head>
 <body>
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-2 pt-1">
+                    <a class="text-muted" href="/">Ahmad Samiei</a>
+                </div>
+                <div class="col-8 d-flex justify-content-end align-items-center">
+                    <nav class="my-2 my-md-0 mr-md-3">
+                        <a class="p-2" href="/">blog</a>
+                        <a class="p-2" href="https://twitter.com/Ahmad_Samiei"><i class="fa fa-twitter"></i></a>
+                        <a class="p-2" href="http://github.com/amad"><i class="fa fa-github"></i></a>
+                        <a class="p-2" href="http://linkedin.com/in/ahmadsamiei/"><i class="fa fa-linkedin"></i></a>
+                        <a class="p-2" href="/rss.xml"><i class="fa fa-rss"></i></a>
+                    </nav>
+                </div>
+            </div>
+      </header>
+    </div>
 
 <div class="container">
-    <div class="row">
-            <article class="post col-md-8 col-md-offset-2">
-        <h1>Do not catch Throwable in the business logic</h1>
-        <span class="post-time"><time datetime="2018-10-16">16 Oct 2018</time></span>
-        <p>PHP7 (Dec 2015) has introduced a new interface called <code>Throwable</code>. <code>\Throwable</code> is the base interface for any object that can be thrown via a throw statement in PHP.</p>
+        <div class="row justify-content-center mt-4">
+        <article class="post col-10">
+            <h1>Do not catch Throwable in the business logic</h1>
+            <span class="post-time text-muted font-weight-light text-monospace">
+                <time datetime="2018-10-16">16 Oct 2018</time>
+            </span>
+            <p>PHP7 (Dec 2015) has introduced a new interface called <code>Throwable</code>. <code>\Throwable</code> is the base interface for any object that can be thrown via a throw statement in PHP.</p>
 <p>PHP7 also converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables.</p>
 <p>Similar to the throwable notion in Java, both <code>Exception</code> and <code>Error</code> classes are a subtype of the <code>Throwable</code> interface. While unlike PHP, in Java Throwable is a class which caused a few issues that are known as bad practice these days. For instance, in Java, you can extend throwable or even throw it directly.</p>
 <p>On the other hand, PHP decided to prevent that issue by making Throwable an interface. Interestingly, they also made it <a href="https://github.com/php/php-src/blob/9003d8a4cfe810b9222273a36b9be89dda94a35b/Zend/zend_exceptions.c#L49">impossible to implement the Throwable interface directly</a>. Which means you have to extend <code>Error</code>, or <code>Exception</code> class to create a custom exception. That way, you have all the benefits of having the Throwable interface without dealing with all bad possible use cases.</p>
@@ -188,49 +208,53 @@ throwable from a handler. So a user using this client won't miss any message eve
 <p><a href="https://github.com/laravel/framework/blob/ac745730492ef23a04ce614228d11e496feb625d/src/Illuminate/Validation/Concerns/ValidatesAttributes.php#L1502"><i class="fa fa-github"></i> Source</a></p>
 <h2>Conclusion</h2>
 <p>You should not catch <code>Throwable</code> in the business logic of your application. It is the responsibility of the infrastructure layer to deal with <code>Error</code>.</p>
-    </article>
-    <div class="col-md-8 col-md-offset-2">
-        <hr />
-        <a
-            href="//twitter.com/share"
-            class="twitter-share-button"
-            data-url="https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html"
-            data-via="Ahmad_Samiei"
-            data-hashtags="php,throwable,exceptionhandler,errorhandling"
-            data-dnt="true"
-            data-counturl="https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html"
-        >
-            Tweet
-        </a>
-        <a
-            class="twitter-follow-button"
-            href="https://twitter.com/Ahmad_Samiei"
-        >
-            Follow @Ahmad_Samiei
-        </a>
+        </article>
     </div>
-            <div class="col-md-8 col-md-offset-2 comments">
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = "https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html";
-                    this.page.identifier = "/blog/do_not_catch_throwable_in_the_business_logic.html";
-                };
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://samiei-org.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <hr />
+            <a
+                href="//twitter.com/share"
+                class="twitter-share-button"
+                data-url="https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html"
+                data-via="Ahmad_Samiei"
+                data-hashtags="php,throwable,exceptionhandler,errorhandling"
+                data-dnt="true"
+                data-counturl="https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html"
+            >
+                Tweet
+            </a>
+            <a
+                class="twitter-follow-button"
+                href="https://twitter.com/Ahmad_Samiei"
+            >
+                Follow @Ahmad_Samiei
+            </a>
         </div>
+    </div>
+            <div class="row justify-content-center">
+            <div class="col-10 comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = "https://samiei.org/blog/do_not_catch_throwable_in_the_business_logic.html";
+                        this.page.identifier = "/blog/do_not_catch_throwable_in_the_business_logic.html";
+                    };
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://samiei-org.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
         </div>
-</div>
+    </div>
 
     <footer>
-    <div class="container text-center">
-        <a class="text-primary text-uppercase" href="/">MORE POSTS</a>
+    <div class="container text-center my-5">
+        <a class="text-primary text-uppercase h5" href="/">MORE POSTS</a>
     </div>
 </footer>
 <script>
