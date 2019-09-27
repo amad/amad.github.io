@@ -1,10 +1,11 @@
 ---
 permalink: /index.html
 ---
+{% set page_title = 'amad.github.io' %}
 {% extends "master.twig" %}
 {% block content %}
 <div class="row">
-    <div class="col-8">
+    <div class="col-12">
         <ul class="posts list-unstyled mt-4">
             {% for post in posts %}
             <li class="pb-4">
