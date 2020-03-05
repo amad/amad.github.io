@@ -1,7 +1,6 @@
 @import 'font-awesome/font-awesome';
 
 body {
-  font-family: open sans, sans-serif;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3a4145;
 }
@@ -34,7 +33,7 @@ span.post-time {
 }
 
 .post {
-  line-height: 1.75;
+  line-height: 1.5;
 
   blockquote {
     padding: 0 20px;
@@ -49,7 +48,8 @@ span.post-time {
 
   p {
     margin: 17px 0;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   h1 {
@@ -64,6 +64,10 @@ span.post-time {
   h2,h3,h4,h5 {
     margin: 48px auto 16px;
   }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
 }
 
 p > code {
