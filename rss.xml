@@ -5,32 +5,25 @@
         <link>https://amad.github.io/</link>
         <description>Ahmad Samiei technical blog</description>
                     <item>
-                <title>Why you should not catch Throwable in the business logic</title>
-                <link>https://amad.github.io/blog/do_not_catch_throwable_in_the_business_logic.html</link>
-                <guid>https://amad.github.io/blog/do_not_catch_throwable_in_the_business_logic.html</guid>
-                <pubDate>Tue, 16 Oct 2018</pubDate>
-                <description>Why you should not catch Throwable in the business logic</description>
+                <title></title>
+                <link></link>
+                <guid></guid>
+                <pubDate>Mon, 25 May 2020</pubDate>
+                <description></description>
             </item>
                     <item>
-                <title>Guide to effective pair programming</title>
-                <link>https://amad.github.io/blog/effective-pair-programming.html</link>
-                <guid>https://amad.github.io/blog/effective-pair-programming.html</guid>
-                <pubDate>Wed, 30 May 2018</pubDate>
-                <description>Guide to effective pair programming</description>
+                <title></title>
+                <link></link>
+                <guid></guid>
+                <pubDate>Mon, 25 May 2020</pubDate>
+                <description></description>
             </item>
                     <item>
-                <title>Tips for Schemaless Design</title>
-                <link>https://amad.github.io/blog/going-schemaless.html</link>
-                <guid>https://amad.github.io/blog/going-schemaless.html</guid>
-                <pubDate>Mon, 06 Mar 2017</pubDate>
-                <description>Tips for Schemaless Design</description>
-            </item>
-                    <item>
-                <title>Git friendly Terminal</title>
-                <link>https://amad.github.io/blog/git-friendly-terminal.html</link>
-                <guid>https://amad.github.io/blog/git-friendly-terminal.html</guid>
-                <pubDate>Thu, 09 Jun 2016</pubDate>
-                <description>Git friendly Terminal</description>
+                <title></title>
+                <link></link>
+                <guid></guid>
+                <pubDate>Mon, 25 May 2020</pubDate>
+                <description></description>
             </item>
             </channel>
 </rss>

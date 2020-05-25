@@ -1,5 +1,5 @@
 ---
-title: Git friendly Terminal
+title: Git friendly terminal
 description: Sharing my terminal aliases
 keywords: git, bash aliases, bash, terminal, git aliases
 date: 2016-06-09

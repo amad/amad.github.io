@@ -99,7 +99,7 @@ interface ExceptionInterface extends \Throwable
 {
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/symfony/security/blob/f713eea2db349c47ac821e0cb67fbd6128fd9851/Core/Exception/ExceptionInterface.php#L19)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/symfony/security/blob/f713eea2db349c47ac821e0cb67fbd6128fd9851/Core/Exception/ExceptionInterface.php#L19)
 
 #### Handling errors (ex. For logging purpose):
 
@@ -117,7 +117,7 @@ try {
 }
 ```
 
-[<i class="fa fa-github"></i> Source](https://github.com/symfony/symfony/blob/2b9c142f07b7dbc11d4d392b77629fa91a5dcb41/src/Symfony/Component/Messenger/Middleware/LoggingMiddleware.php#L37)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/symfony/symfony/blob/2b9c142f07b7dbc11d4d392b77629fa91a5dcb41/src/Symfony/Component/Messenger/Middleware/LoggingMiddleware.php#L37)
 
 #### Fail-safe component:
 
@@ -144,7 +144,7 @@ try {
     }
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/symfony/symfony/blob/766a82bddf8f70f10840393bc348937f3532a7a5/src/Symfony/Component/Messenger/Transport/AmqpExt/AmqpReceiver.php#L65)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/symfony/symfony/blob/766a82bddf8f70f10840393bc348937f3532a7a5/src/Symfony/Component/Messenger/Transport/AmqpExt/AmqpReceiver.php#L65)
 
 As you can see, Symfony is rethrowing the exception immediately after re-queuing the message.
 
@@ -163,7 +163,7 @@ try {
     $this->registrationErrors[] = new FatalThrowableError($e);
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/symfony/symfony/blob/64727c182205800a734f046dac8688f1ed6dea3e/src/Symfony/Bundle/FrameworkBundle/Console/Application.php#L179)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/symfony/symfony/blob/64727c182205800a734f046dac8688f1ed6dea3e/src/Symfony/Bundle/FrameworkBundle/Console/Application.php#L179)
 
 Since Laravel is using Symfony HttpKernel and Debug components, they are also transforming Throwable into Symfony `FatalThrowableError`.
 
@@ -180,7 +180,7 @@ try {
     $response = $this->handlePhpError($e, $request, $response);
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/slimphp/Slim/blob/6d347477d09ab7910e625cee74c8108b7b85c7f9/Slim/App.php#L409)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/slimphp/Slim/blob/6d347477d09ab7910e625cee74c8108b7b85c7f9/Slim/App.php#L409)
 
 ### More examples from packages
 
@@ -197,7 +197,7 @@ try {
     error_reporting($errorLevel);
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/symfony/symfony/blob/6b8e6ce73aaec628656750c5e7370eba9c4c7756/src/Symfony/Component/HttpKernel/Kernel.php#L523)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/symfony/symfony/blob/6b8e6ce73aaec628656750c5e7370eba9c4c7756/src/Symfony/Component/HttpKernel/Kernel.php#L523)
 
 One interesting use case is the Laravel View component. The render method is catching Throwable and flushing the state before re-throwing it.
 
@@ -219,7 +219,7 @@ try {
     throw $e;
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/laravel/framework/blob/9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6/src/Illuminate/View/View.php#L104)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/laravel/framework/blob/9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6/src/Illuminate/View/View.php#L104)
 
 Here is another place where Laravel is catching Throwable. And it is a good example to demonstrate why it is a bad idea to catch Throwable in your code.
 
@@ -236,7 +236,7 @@ try {
     return false;
 }
 ```
-[<i class="fa fa-github"></i> Source](https://github.com/laravel/framework/blob/ac745730492ef23a04ce614228d11e496feb625d/src/Illuminate/Validation/Concerns/ValidatesAttributes.php#L1502)
+[<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source](https://github.com/laravel/framework/blob/ac745730492ef23a04ce614228d11e496feb625d/src/Illuminate/Validation/Concerns/ValidatesAttributes.php#L1502)
 
 ## Conclusion
 

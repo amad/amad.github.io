@@ -4,17 +4,24 @@ permalink: /index.html
 {% set page_title = 'amad.github.io' %}
 {% extends "master.twig" %}
 {% block content %}
-<div class="row">
-    <div class="col-12">
-        <ul class="posts list-unstyled mt-4">
-            {% for post in posts %}
-            <li class="pb-4">
-                <a href="{{ post.meta.permalink|raw }}"><h4>{{ post.meta.title }}</h4></a>
-                <span class="post-time text-muted font-weight-light text-monospace">{{ post.meta.date|date('d M Y') }}</span>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
+    {% for year, postsOfYear in posts %}
+        <div class="row pt-4">
+            <div class="col-2 col-md-1 pt-3">
+                <h4 class="text-muted font-weight-bold">{{ year }}</h4>
+            </div>
+            <div class="col-10 col-md-8 col-lg-6">
+                <ul class="posts list-unstyled">
+                    {% for post in postsOfYear %}
+                    <li class="pb-2 pt-3 ml-2 post-item">
+                        <a href="{{ post.meta.permalink|raw }}">
+                            <span class="d-inline">{{ post.meta.title }}</span>
+                            <span class="post-time text-muted font-weight-light text-monospace text-right">{{ post.meta.date|date('d M') }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
 {% block footer %}{% endblock %}

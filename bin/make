@@ -33,7 +33,14 @@ $posts = collect(\glob('markdown/*.md'))
             );
         }
         \file_put_contents('.' . $post['meta']['permalink'], $twig->loadTemplate('post.twig')->render($post));
-    });
+    })->reduce(
+        function ($carry, $post) {
+            $carry[date('Y', $post['meta']['date'])][] = $post;
+
+            return $carry;
+        },
+        []
+    );
 
 collect($config['templates'])
     ->map(function ($path) {

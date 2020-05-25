@@ -11,37 +11,38 @@
     <link rel="dns-prefetch" href="https://google-analytics.com">
     <link rel="alternate" href="/" hreflang="en-us" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/app.min.css?v=93650a7ee30d9917fb50ce7b38bece69">
+    <link rel="stylesheet" href="/assets/css/app.min.css?v=ba069736ea8e6ff6ba5263dc7a476dae">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
 </head>
 <body>
-    <div class="container">
-        <header class="blog-header py-3">
+    <header class="blog-header py-3">
+        <div class="container">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
                     <a class="text-muted" href="/">← Home</a>
                 </div>
                 <div class="col-8 d-flex justify-content-end align-items-center">
                     <nav class="my-2 my-md-0 mr-md-3">
-                        <a class="p-2" href="/">blog</a>
-                        <a class="p-2" href="https://twitter.com/Ahmad_Samiei"><i class="fa fa-twitter"></i></a>
-                        <a class="p-2" href="http://github.com/amad"><i class="fa fa-github"></i></a>
-                        <a class="p-2" href="http://linkedin.com/in/ahmadsamiei/"><i class="fa fa-linkedin"></i></a>
-                        <a class="p-2" href="/rss.xml"><i class="fa fa-rss"></i></a>
+                        <a class="p-2" href="/">Posts</a>
+                        <a class="p-2" href="https://twitter.com/Ahmad_Samiei"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"></path></svg></a>
+                        <a class="p-2" href="http://github.com/amad"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77a5.44 5.44.0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"></path></svg></a>
+                        <a class="p-2" href="http://linkedin.com/in/ahmadsamiei/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a class="p-2" href="/rss.xml"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
                     </nav>
                 </div>
             </div>
-      </header>
-    </div>
+        </div>
+    </header>
 
 <div class="container">
         <div class="row justify-content-center mt-4">
         <article class="post col-12 col-md-10 col-lg-8">
             <h1>Why you should not catch Throwable in the business logic</h1>
             <span class="post-time text-muted font-weight-light text-monospace">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 <time datetime="2018-10-16">16 Oct 2018</time>
             </span>
             <p>PHP7 converted many fatal and recoverable fatal errors and warnings into a new throwable class called Error. Therefore the Throwable interface was needed to have a reference type for all throwables. The new interface called <code>Throwable</code> which is the base interface for any object that can be thrown via a throw statement.</p>
@@ -109,7 +110,7 @@
 <pre><code class="language-php">interface ExceptionInterface extends \Throwable
 {
 }</code></pre>
-<p><a href="https://github.com/symfony/security/blob/f713eea2db349c47ac821e0cb67fbd6128fd9851/Core/Exception/ExceptionInterface.php#L19"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/symfony/security/blob/f713eea2db349c47ac821e0cb67fbd6128fd9851/Core/Exception/ExceptionInterface.php#L19"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <h4>Handling errors (ex. For logging purpose):</h4>
 <p>Another place where Symfony is using Throwable is the <code>LoggingMiddleware</code>. This middleware is catching the Throwable, and re-throwing it after logging it. That is an excellent example of seeing how you might catch Throwable for the sake of providing a custom log/metric/event. In this case, you have to rethrow the exception immediately.</p>
 <pre><code class="language-php">try {
@@ -121,7 +122,7 @@
     ));
     throw $e;
 }</code></pre>
-<p><a href="https://github.com/symfony/symfony/blob/2b9c142f07b7dbc11d4d392b77629fa91a5dcb41/src/Symfony/Component/Messenger/Middleware/LoggingMiddleware.php#L37"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/symfony/symfony/blob/2b9c142f07b7dbc11d4d392b77629fa91a5dcb41/src/Symfony/Component/Messenger/Middleware/LoggingMiddleware.php#L37"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <h4>Fail-safe component:</h4>
 <p>The Symfony Messenger is an excellent example of a legit use case to catch Throwable.
 The AmqpReceiver can re-queue the message when it catches uncaught
@@ -143,7 +144,7 @@ throwable from a handler. So a user using this client won't miss any message eve
         pcntl_signal_dispatch();
     }
 }</code></pre>
-<p><a href="https://github.com/symfony/symfony/blob/766a82bddf8f70f10840393bc348937f3532a7a5/src/Symfony/Component/Messenger/Transport/AmqpExt/AmqpReceiver.php#L65"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/symfony/symfony/blob/766a82bddf8f70f10840393bc348937f3532a7a5/src/Symfony/Component/Messenger/Transport/AmqpExt/AmqpReceiver.php#L65"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <p>As you can see, Symfony is rethrowing the exception immediately after re-queuing the message.</p>
 <h4>Custom errors</h4>
 <p>I also found another case where Symfony does catch Throwable.</p>
@@ -155,7 +156,7 @@ throwable from a handler. So a user using this client won't miss any message eve
 } catch (\Throwable $e) {
     $this-&gt;registrationErrors[] = new FatalThrowableError($e);
 }</code></pre>
-<p><a href="https://github.com/symfony/symfony/blob/64727c182205800a734f046dac8688f1ed6dea3e/src/Symfony/Bundle/FrameworkBundle/Console/Application.php#L179"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/symfony/symfony/blob/64727c182205800a734f046dac8688f1ed6dea3e/src/Symfony/Bundle/FrameworkBundle/Console/Application.php#L179"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <p>Since Laravel is using Symfony HttpKernel and Debug components, they are also transforming Throwable into Symfony <code>FatalThrowableError</code>.</p>
 <p>Other than that, Laravel is very careful about Throwable. I found a few places where they use it for type hinting.</p>
 <p>Slim framework only catches Throwable in its request handler. All it does is passing it to the registered error handler which again is a valid use case.</p>
@@ -166,7 +167,7 @@ throwable from a handler. So a user using this client won't miss any message eve
 } catch (Throwable $e) {
     $response = $this-&gt;handlePhpError($e, $request, $response);
 }</code></pre>
-<p><a href="https://github.com/slimphp/Slim/blob/6d347477d09ab7910e625cee74c8108b7b85c7f9/Slim/App.php#L409"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/slimphp/Slim/blob/6d347477d09ab7910e625cee74c8108b7b85c7f9/Slim/App.php#L409"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <h3>More examples from packages</h3>
 <p>Symfony also uses Throwable in a few places just as a workaround to avoid include warnings.</p>
 <p>I assume it is just a performance hack. They could do a few checks for file path and permission to make sure you can include the file. While doing it in framework level might be reasonable (assuming there is huge performance gain here). Please don't use this trick for silencing errors in your ever-changing application layer.</p>
@@ -177,7 +178,7 @@ throwable from a handler. So a user using this client won't miss any message eve
 } finally {
     error_reporting($errorLevel);
 }</code></pre>
-<p><a href="https://github.com/symfony/symfony/blob/6b8e6ce73aaec628656750c5e7370eba9c4c7756/src/Symfony/Component/HttpKernel/Kernel.php#L523"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/symfony/symfony/blob/6b8e6ce73aaec628656750c5e7370eba9c4c7756/src/Symfony/Component/HttpKernel/Kernel.php#L523"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <p>One interesting use case is the Laravel View component. The render method is catching Throwable and flushing the state before re-throwing it.</p>
 <p>Clearly, it is a very likely scenario for a template component to receive an Error on render step and that is a reasonable use case. Don't forget that the code is still re-throwing the exception/error.</p>
 <p>But the code is also catching Exception here which seems unnecessary because they are making the same call to the flush method. Well, that is just a trick to keep this code PHP5+ compatible because the Throwable interface doesn't exist before PHP7. Perhaps they are going to remove it since the current version of Laravel doesn't support PHP5 anymore.</p>
@@ -193,7 +194,7 @@ throwable from a handler. So a user using this client won't miss any message eve
     $this-&gt;factory-&gt;flushState();
     throw $e;
 }</code></pre>
-<p><a href="https://github.com/laravel/framework/blob/9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6/src/Illuminate/View/View.php#L104"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/laravel/framework/blob/9f313ce9bb5ad49a06ae78d33fbdd1c92a0e21f6/src/Illuminate/View/View.php#L104"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <p>Here is another place where Laravel is catching Throwable. And it is a good example to demonstrate why it is a bad idea to catch Throwable in your code.</p>
 <p>This time it just looks like a hack to avoid TypeError. This way the code can handle Exception in case of supplying invalid or unrecognized timezone and possible TypeError since this parameter is dynamically typed and there is no null safe operator here to prevent passing null value. Perhaps we can call it lazy writing since they could do a simple type check here.</p>
 <p>The point is that it is hard for the reader to understand the intention of the original author. Please don't use similar hacks on your application logic if you are not the only developer working on the code. In this case, it was one call to an internal PHP method, in your case you might have a call to an ever-changing domain level code.</p>
@@ -204,7 +205,7 @@ throwable from a handler. So a user using this client won't miss any message eve
 } catch (Throwable $e) {
     return false;
 }</code></pre>
-<p><a href="https://github.com/laravel/framework/blob/ac745730492ef23a04ce614228d11e496feb625d/src/Illuminate/Validation/Concerns/ValidatesAttributes.php#L1502"><i class="fa fa-github"></i> Source</a></p>
+<p><a href="https://github.com/laravel/framework/blob/ac745730492ef23a04ce614228d11e496feb625d/src/Illuminate/Validation/Concerns/ValidatesAttributes.php#L1502"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Source</a></p>
 <h2>Conclusion</h2>
 <p>You should not catch <code>Throwable</code> in the business logic of your application. It is the responsibility of the infrastructure layer to deal with <code>Error</code>.</p>
         </article>
@@ -262,6 +263,7 @@ throwable from a handler. So a user using this client won't miss any message eve
 </script>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true" defer="defer"></script>
 <script id="dsq-count-scr" src="//samiei-org.disqus.com/count.js" async></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
     if (window.location.hostname !== 'localhost') {
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -272,6 +274,5 @@ throwable from a handler. So a user using this client won't miss any message eve
         ga('send', 'pageview');
     }
 </script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-title: Tips for Schemaless Design
+title: Tips for schemaless design
 description: Recommendations that can be taken into account before going schemaless
 keywords: schemaless, lessons learned
 date: 2017-03-06

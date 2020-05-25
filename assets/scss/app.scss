@@ -1,8 +1,18 @@
-@import 'font-awesome/font-awesome';
-
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #3a4145;
+  font-family: inter ui,-apple-system,BlinkMacSystemFont,roboto,segoe ui,Helvetica,Arial,sans-serif;
+  color: #000000;
+}
+
+header {
+  background-color: #fafafa;
+
+  nav {
+    align-items: baseline;
+
+    a:first-child {
+      vertical-align: -.125em;
+    }
+  }
 }
 
 section {
@@ -26,10 +36,29 @@ section {
   a {
     color: #222222;
   }
+
+  .post-item {
+    border-bottom: 1px gray dashed;
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0;
+      text-decoration: none;
+    }
+  }
 }
 
 span.post-time {
   font-size: 0.8em;
+}
+
+.feather-calendar {
+  display: inline-block;
+  vertical-align: -.125em;
+  width: 1em;
+  height: 1em;
 }
 
 .post {
@@ -38,7 +67,7 @@ span.post-time {
   blockquote {
     padding: 0 20px;
     margin: 20px 0;
-    border-left: 5px solid #eee;
+    border-left: 4px solid #666;
 
     p {
       color: #666;
@@ -48,8 +77,8 @@ span.post-time {
 
   p {
     margin: 17px 0;
-    font-size: 1.3em;
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-family: inter ui,-apple-system,BlinkMacSystemFont,roboto,segoe ui,Helvetica,Arial,sans-serif;
   }
 
   h1 {
@@ -64,10 +93,10 @@ span.post-time {
   h2,h3,h4,h5 {
     margin: 48px auto 16px;
   }
-}
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  }
 }
 
 p > code {
