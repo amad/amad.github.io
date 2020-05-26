@@ -4,6 +4,19 @@ permalink: /index.html
 {% set page_title = 'amad.github.io' %}
 {% extends "master.twig" %}
 {% block content %}
+<form class="form-inline mt-4" action="https://duckduckgo.com" name="searchform">
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <input class="form-control" type="search" name="q" aria-label="Search via DuckDuckGo" placeholder="Search via DuckDuckGo">
+            <input type="hidden" name="sites" value="amad.github.io">
+            <input type="hidden" name="kp" value="-2">
+            <input type="hidden" name="k1" value="-1">
+        </div>
+        <div class="col-auto">
+            <input class="btn ml-1" type="submit" value="Search">
+        </div>
+    </div>
+</form>
     {% for year, postsOfYear in posts %}
         <div class="row pt-4">
             <div class="col-2 col-md-1 pt-3">
