@@ -1,0 +1,27 @@
+---
+permalink: /my-reading-list.html
+---
+{% set page_title = 'amad.github.io' %}
+{% extends "master.twig" %}
+{% block content %}
+<div class="row pt-4">
+    <div class="col-12">
+        <h2>My reading list</h2>
+        <p>Books, Newsletters, and Podcasts that I have read without any order. (Descriptions aren't mine)</p>
+        {% for name, category in books %}
+        <h3>{{ name }}</h3>
+        <ul class="">
+            {% for book in category %}
+            <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="{{ book.url }}">
+                    <span class="d-inline font-weight-bold">{{ book.title }}</span>
+                </a>
+                <span class="text-right">{{ book.description }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}

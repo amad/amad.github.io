@@ -15,7 +15,7 @@ pages:
 
 update:
 	composer update --no-dev -o
-	make style
+	make assets
 	make pages
 
 serve:

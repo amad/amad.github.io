@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ahmad Samiei</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ahmad Samiei technical blog">
+    <meta name="keywords" content="Ahmad Samiei, amad, blog, development, software engineering, software design, design patterns, best practices, software architecture">
+    <meta name="author" content="Ahmad Samiei">
+    <link rel="dns-prefetch" href="https://google-analytics.com">
+    <link rel="alternate" href="/" hreflang="en-us" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/app.min.css?v=ba069736ea8e6ff6ba5263dc7a476dae">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+</head>
+<body>
+    <header class="blog-header py-3">
+        <div class="container">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="text-muted" href="/">amad.github.io</a>
+                </div>
+                <div class="col-8 d-flex justify-content-end align-items-center">
+                    <nav class="my-2 my-md-0 mr-md-3">
+                        <a class="p-2" href="/">Posts</a>
+                        <a class="p-2" href="/my-reading-list.html">Reading list</a>
+                        <a class="p-2" href="https://twitter.com/Ahmad_Samiei"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"></path></svg></a>
+                        <a class="p-2" href="http://github.com/amad"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77a5.44 5.44.0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"></path></svg></a>
+                        <a class="p-2" href="http://linkedin.com/in/ahmadsamiei/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a class="p-2" href="/rss.xml"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="container">
+    <div class="row pt-4">
+    <div class="col-12">
+        <h2>My reading list</h2>
+        <p>Books, Newsletters, and Podcasts that I have read without any order. (Descriptions aren't mine)</p>
+                <h3>Engineering</h3>
+        <ul class="">
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Microservices AntiPatterns and Pitfalls</span>
+                </a>
+                <span class="text-right">With this concise ebook, author Mark Richards walks you through the ten most common microservice anti-patterns and pitfalls, and provides solutions for avoiding them.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Effective Go</span>
+                </a>
+                <span class="text-right">Tips for writing clear, idiomatic Go code</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Concurrency in Go</span>
+                </a>
+                <span class="text-right">Concurrency can be notoriously difficult to get right, but fortunately, the Go open source programming language makes working with concurrency tractable and even easy. If you&#039;re a developer familiar with Go, this practical book demonstrates best practices and patterns to help you incorporate concurrency into your systems.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Domain Driven Design</span>
+                </a>
+                <span class="text-right">Eric Evans has written a fantastic book on how you can make the design of your software match your mental model of the problem domain you are addressing.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Domain Driven Design Quickly</span>
+                </a>
+                <span class="text-right">Domain Driven Design Quicklyis a short, quick-readable summary and introduction to the fundamentals of DDD.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Software Architecture Patterns</span>
+                </a>
+                <span class="text-right">Deep dive into many common software architecture patterns. Each pattern includes a full explanation of how it works, explains the pattern’s benefits and considerations, and describes the circumstances and conditions it was designed to address.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Patterns of Enterprise Application Architecture</span>
+                </a>
+                <span class="text-right">Developers of enterprise applications (e.g reservation systems, supply chain programs, financial systems, etc.) face a unique set of challenges, different than those faced by their desktop system and embedded system peers. For this reason, enterprise developers must uncover their own solutions. In this new book, noted software engineering expert Martin Fowler turns his attention to enterprise application development. He helps professionals understand the complex   yet critical   aspects of architecture.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Microservices vs Service Oriented Architecture</span>
+                </a>
+                <span class="text-right">For anyone who has been developing web applications for 10 years or more, the recent rise of microservices sounds a lot like a development approach we already knew service oriented architecture (SOA). Both architectures are focused on breaking up large monolithic applications into collections of smaller independent services, and both come with the promise of simplifying development.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Effective Scala</span>
+                </a>
+                <span class="text-right">While highly effective, Scala is also a large language, and our experiences have taught us to practice great care in its application. What are its pitfalls? Which features do we embrace, which do we eschew? When do we employ purely functional style, and when do we avoid it? In other words: what have we found to be an effective use of the language? This guide attempts to distill our experience into short essays, providing a set of best practices.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The TypeScript Handbook</span>
+                </a>
+                <span class="text-right">If you have experience in other languages, you should be able to pick up JavaScript syntax quite quickly by reading the handbook.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Build APIs You Won&#039;t Hate</span>
+                </a>
+                <span class="text-right">Tasked with building an API for your company but don&#039;t have a clue where to start? Taken over an existing API and hate it? Built your own API and still hate it? This book is for you.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Pragmatic Programmer</span>
+                </a>
+                <span class="text-right">Ward Cunningham Straight from the programming trenches, The Pragmatic Programmer cuts through the increasing specialization and technicalities of modern software development to examine the core process taking a requirement and producing working, maintainable code that delights its users.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Refactoring: Improving the Design of Existing Code</span>
+                </a>
+                <span class="text-right">As the application of object technology particularly the Java programming language has become commonplace, a new problem has emerged to confront the software development community. Significant numbers of poorly designed programs have been created by less-experienced developers, resulting in applications that are inefficient and hard to maintain and extend. Increasingly, software system professionals are discovering just how difficult it is to work with these inherited, non-optimal applications.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Don&#039;t Make Me Think</span>
+                </a>
+                <span class="text-right">This is a book about Web design principles rather than Web design technology. The author is a Web design expert. has a wealth of practical experience. He uses humor to reveal the language of your Web design is important but easily overlooked problem. just a few hours. you will be able to control the design principles taught in the book to find the crux of website design.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Clean Architecture</span>
+                </a>
+                <span class="text-right">Building upon the success of best-sellers The Clean Coder and Clean Code, legendary software craftsman Uncle Bob shows how to bring greater professionalism and discipline to application architecture and design.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Enterprise Integration Patterns</span>
+                </a>
+                <span class="text-right">Enterprise Integration Patterns provides an invaluable catalog of sixty-five patterns, with real-world solutions that demonstrate the formidable of messaging and help you to design effective messaging solutions for your enterprise. The authors also include examples covering a variety of different integration technologies, such as JMS, MSMQ, TIBCO ActiveEnterprise, Microsoft BizTalk, SOAP, and XSL. A case study describing a bond trading system illustrates the patterns in practice, and the book offers a look at emerging standards, as well as insights into what the future of enterprise integration might hold. This book provides a consistent vocabulary and visual notation framework to describe large-scale integration solutions across many technologies. It also explores in detail the advantages and limitations of asynchronous messaging architectures.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Continuous Integration: Improving Software Quality and Reducing Risk</span>
+                </a>
+                <span class="text-right">For any software developer who has spent days in integration hell, cobbling together myriad software components, Continuous Integration: Improving Software Quality and Reducing Risk illustrates how to transform integration from a necessary evil into an everyday part of the development process. The key, as the authors show, is to integrate regularly and often using continuous integration (CI) practices and techniques.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Domain-Specific Languages</span>
+                </a>
+                <span class="text-right">When carefully selected and used, Domain-Specific Languages (DSLs) may simplify complex code, promote effective communication with customers, improve productivity, and unclog development bottlenecks. In Domain-Specific Languages , noted software development expert Martin Fowler first provides the information software professionals need to decide if and when to utilize DSLs. Then, where DSLs prove suitable, Fowler presents effective techniques for building them, and guides software engineers in choosing the right approaches for their applications.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Algorithm Design Manual</span>
+                </a>
+                <span class="text-right">This volume helps take some of the mystery out of identifying and dealing with key algorithms. Drawing heavily on the author&#039;s own real-world experiences, the book stresses design and analysis. Coverage is divided into two parts, the first being a general guide to techniques for the design and analysis of computer algorithms. The second is a reference section, which includes a catalog of the 75 most important algorithmic problems. By browsing this catalog, readers can quickly identify what the problem they have encountered is called, what is known about it, and how they should proceed if they need to solve it.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Javascript: The Good Parts</span>
+                </a>
+                <span class="text-right">Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Scaling PHP Applications</span>
+                </a>
+                <span class="text-right">I(author) spent 3 years scaling Twitpic to over 60 million visitors and 20 billion HTTP Requests. I&#039;m sharing everything I&#039;ve learnt in this ebook so you can skip over the trial-and-error and head straight to the techniques.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Design Patterns: Elements of Reusable Object-Oriented Software</span>
+                </a>
+                <span class="text-right">Capturing a wealth of experience about the design of object-oriented software, four top-notch designers present a catalog of simple and succinct solutions to commonly occurring design problems. Previously undocumented, these 23 patterns allow designers to create more flexible, elegant, and ultimately reusable designs without having to rediscover the design solutions themselves.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Clean Code</span>
+                </a>
+                <span class="text-right">Even bad code can function. But if code isn&#039;t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn&#039;t have to be that way.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Structure and Interpretation of Computer Programs</span>
+                </a>
+                <span class="text-right">Structure and Interpretation of Computer Programs has had a dramatic impact on computer science curricula over the past decade. This long-awaited revision contains changes throughout the text. There are new implementations of most of the major programming systems in the book, including the interpreters and compilers, and the authors have incorporated many small changes that reflect their experience teaching the course at MIT since the first edition was published.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Azure Architecture Center</span>
+                </a>
+                <span class="text-right">Guidance for architecting solutions on Azure using established patterns and practices. Not a book, but great summaries and documents.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">A curated list of free programming books and papers</span>
+                </a>
+                <span class="text-right">This one is just an extra link here. I haven&#039;t read most of them myself, but I found a few interesting ones that I will not link them individually here. Open the list and you may find something interesting there.</span>
+            </li>
+                    </ul>
+                <h3>Other books</h3>
+        <ul class="">
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Hard Thing About Hard Things</span>
+                </a>
+                <span class="text-right">A lot of people talk about how great it is to start a business, but only Ben Horowitz is brutally honest about how hard it is to run one.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Simple Path to Wealth</span>
+                </a>
+                <span class="text-right">In the dark, bewildering, trap-infested jungle of misinformation and opaque riddles that is the world of investment, JL Collins is the fatherly wizard on the side of the path, offering a simple map, warm words of encouragement and the tools to forge your way through with confidence. You&#039;ll never find a wiser advisor with a bigger heart.   Malachi Rempen: Filmmaker, cartoonist, author and self-described ruffian</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Barefoot Investor</span>
+                </a>
+                <span class="text-right">This book will show you how to create an entire financial plan that is so simple you can sketch it on the back of a serviette and you&#039;ll be able to manage your money in 10 minutes a week.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Rich Dad Poor Dad</span>
+                </a>
+                <span class="text-right">Rich Dad Poor Dad is Robert&#039;s story of growing up with two dads his real father and the father of his best friend, his rich dad   and the ways in which both men shaped his thoughts about money and investing. The book explodes the myth that you need to earn a high income to be rich and explains the difference between working for money and having your money work for you.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Richest Man in Babylon</span>
+                </a>
+                <span class="text-right">Beloved by millions, this timeless classic holds the key to all you desire and everything you wish to accomplish. This is the book that reveals the secret to personal wealth. The Success Secrets of the Ancients. An Assured Road to Happiness and Prosperity.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Millionaire Next Door</span>
+                </a>
+                <span class="text-right">Who are the rich in this country? Get the answers in The Millionaire Next Door, the never-before-told story about wealth in America. You&#039;ll be surprised at what you find out.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Essentialism</span>
+                </a>
+                <span class="text-right">Essentialism is not one more thing – it’s a whole new way of doing everything. A must-read for any leader, manager, or individual who wants to learn who to do less, but better, in every area of their lives, Essentialism  is a movement whose time has come.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Atomic Habits</span>
+                </a>
+                <span class="text-right">No matter your goals, Atomic Habits offers a proven framework for improving every day. James Clear, one of the world&#039;s leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Failing Forward</span>
+                </a>
+                <span class="text-right">Failing Forward: Turning Mistakes into Stepping Stones for Success.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Lean Startup</span>
+                </a>
+                <span class="text-right">Most startups fail. But many of those failures are preventable. The Lean Startup is a new approach being adopted across the globe, changing the way companies are built and new products are launched.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Startup Playbook</span>
+                </a>
+                <span class="text-right">According to the Kauffman Index of Entrepreneurial Activity, more than 565,000 new businesses were created in 2010 in the United States alone each one of them hoping to strike gold. The Startup Playbook will help them succeed. Going insider to insider with unprecedented access, New York Times bestselling author and Clickable CEO, David Kidder, shares the hard-hitting experiences of some of the world&#039;s most influential entrepreneurs and CEOs, revealing their most closely held advice. Face-to-face interviews with 40 founders give readers key insights into what it took to build PayPal, LinkedIn, AOL, TED, Flickr, and many others into household names.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Wired to Care</span>
+                </a>
+                <span class="text-right">Empathy isn&#039;t about being touchy-feely. It&#039;s the ability to step outside of yourself and see the world as other people do. Empathy helps to make good leaders into great ones: they see new opportunities faster than their competitors, have the courage to take a risk on something new, and have the gut-level intuition that they need to make the right decisions when the path ahead is unclear.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Art of War</span>
+                </a>
+                <span class="text-right">Twenty-Five Hundred years ago, Sun Tzu wrote this classic book of military strategy based on Chinese warfare and military thought. Since that time, all levels of military have used the teaching on Sun Tzu to warfare and civilization have adapted these teachings for use in politics, business and everyday life. The Art of War is a book which should be used to gain advantage of opponents in the boardroom and battlefield alike.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The 10x Rule</span>
+                </a>
+                <span class="text-right">The 10 X Rule unveils the principle of Massive Action, allowing you to blast through business clichZs and risk-aversion while taking concrete steps to reach your dreams. It also demonstrates why people get stuck in the first three actions and how to move into making the 10X Rule a discipline. Find out exactly where to start, what to do, and how to follow up each action you take with more action to achieve Massive Action results.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Eat That Frog!</span>
+                </a>
+                <span class="text-right">The legendary Eat That Frog! (more than 450,000 copies sold and translated into 23 languages) provides the 21 most effective methods for conquering procrastination and accomplishing more. This new edition is revised and updated throughout, and includes brand new information on how to keep technology from dominating our time.</span>
+            </li>
+                    </ul>
+                <h3>Tech Podcasts</h3>
+        <ul class="">
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Software Engineering Daily</span>
+                </a>
+                <span class="text-right">Software Engineering Daily features daily interviews about technical software topics.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">InfoQ</span>
+                </a>
+                <span class="text-right">Professional software development.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Thoughtworks</span>
+                </a>
+                <span class="text-right">From deep technical topics to digital transformation and innovation, our podcasts feature captivating conversations on the latest in business and tech. Explore and listen in your own time, on the channel of your choice.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Darknet Diaries</span>
+                </a>
+                <span class="text-right">True stories from the dark side of the Internet. This is a podcast about hackers, breaches, shadow government activity, hacktivism, cybercrime, and all the things that dwell on the hidden parts of the network. This is Darknet Diaries.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Techmeme Ride Home</span>
+                </a>
+                <span class="text-right">Daily tech news.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Code[ish]</span>
+                </a>
+                <span class="text-right">A podcast from the team at Heroku, exploring code, technology, tools, tips, and the life of the developer.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Inside Java</span>
+                </a>
+                <span class="text-right">News and views from the Java team at Oracle.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Go time</span>
+                </a>
+                <span class="text-right">Weekly podcast with diverse discussions from around the Go community.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Changelog</span>
+                </a>
+                <span class="text-right">Conversations with the hackers, leaders, and innovators of the software world.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Serverless Chats</span>
+                </a>
+                <span class="text-right">Serverless Chats is a podcast designed to geek out on everything serverless.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">AWS Podcast</span>
+                </a>
+                <span class="text-right">The Official AWS Podcast is a podcast for developers and IT professionals looking for the latest news and trends in storage, security, infrastructure, serverless, and more. Join Simon Elisha and Nicki Stone for regular updates, deep dives and interviews. Whether you’re training machine learning models, developing open source projects, or building cloud solutions, the AWS Podcast has something for you.</span>
+            </li>
+                    </ul>
+                <h3>Other Podcasts</h3>
+        <ul class="">
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Pessimists Archive</span>
+                </a>
+                <span class="text-right">A history of why we resist new things.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Hardcore History</span>
+                </a>
+                <span class="text-right">Hardcore History is Carlin&#039;s forum for exploring topics throughout world history. The focus of each episode varies widely from show to show but they are generally centered on specific historical events and are discussed in a theater of the mind style. New episodes are released approximately every four to seven months.</span>
+            </li>
+                    </ul>
+                <h3>Newsletters</h3>
+        <ul class="">
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">The Software Architects</span>
+                </a>
+                <span class="text-right">The InfoQ Architects&#039; Newsletter is your monthly guide to all the topics, technologies and techniques that every professional or aspiring software architect needs to know about.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Software Lead Weekly</span>
+                </a>
+                <span class="text-right">A weekly email for busy people who care about people, culture and leadership.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">StatusCode</span>
+                </a>
+                <span class="text-right">Covering the week’s news in software development, infrastructure, ops, platforms, and performance.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Serverless Status</span>
+                </a>
+                <span class="text-right">The newsletter features a mix of news, demos and interesting projects, highlighting what serverless can offer developers.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Golang Weekly</span>
+                </a>
+                <span class="text-right">The most popular newsletter amongst the rapidly growing Go community.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">Node Weekly</span>
+                </a>
+                <span class="text-right">Node related articles and links that were beginning to take over JavaScript Weekly’s issues at the time.</span>
+            </li>
+                        <li class="pb-2 pt-3 ml-2 post-item">
+                <a href="">
+                    <span class="d-inline font-weight-bold">JavaScript Weekly</span>
+                </a>
+                <span class="text-right">JavaScript Weekly is aimed at JavaScript developers and web developers with an interest in JavaScript, Angular, React, Node.js, and related technologies.</span>
+            </li>
+                    </ul>
+            </div>
+</div>
+</div>
+
+<script>
+    if (window.location.hostname !== 'localhost') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-69085808-1', 'auto');
+        ga('send', 'pageview');
+    }
+</script>
+</body>
+</html>

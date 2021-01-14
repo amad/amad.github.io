@@ -18,6 +18,11 @@ permalink: /sitemap.xml
         <lastmod>{{ now|date('Y-d-m') }}</lastmod>
         <changefreq>yearly</changefreq>
     </url>
+    <url>
+        <loc>{{ config.base_url }}/my-reading-list.html</loc>
+        <lastmod>{{ now|date('Y-d-m') }}</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
     {% for post in posts %}
     <url>
         <loc>{{ post.post_url }}</loc>

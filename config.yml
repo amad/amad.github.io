@@ -7,4 +7,5 @@ keywords: Ahmad Samiei, amad, blog, development, software engineering, software 
 templates:
   - rss.twig
   - blog.twig
+  - my-reading-list.twig
   - sitemap.twig
