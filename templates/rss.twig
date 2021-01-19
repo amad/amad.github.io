@@ -7,14 +7,16 @@ permalink: /rss.xml
         <title>{{ config.title }}</title>
         <link>{{ config.base_url }}/</link>
         <description>{{ config.description }}</description>
-        {% for post in posts %}
+        {% for year, postsOfYear in posts %}
+        {% for post in postsOfYear %}
             <item>
                 <title>{{ post.meta.title|raw }}</title>
-                <link>{{ post.post_url }}</link>
-                <guid>{{ post.post_url }}</guid>
+                <link>{{ post.post_url|raw }}</link>
+                <guid>{{ post.post_url|raw }}</guid>
                 <pubDate>{{ post.meta.date|date('D, d M Y') }}</pubDate>
                 <description>{{ post.meta.title|raw }}</description>
             </item>
+        {% endfor %}
         {% endfor %}
     </channel>
 </rss>

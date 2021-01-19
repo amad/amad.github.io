@@ -23,11 +23,13 @@ permalink: /sitemap.xml
         <lastmod>{{ now|date('Y-d-m') }}</lastmod>
         <changefreq>yearly</changefreq>
     </url>
-    {% for post in posts %}
+    {% for year, postsOfYear in posts %}
+    {% for post in postsOfYear %}
     <url>
         <loc>{{ post.post_url }}</loc>
         <lastmod>{{ post.meta.date|date('Y-d-m') }}</lastmod>
         <changefreq>yearly</changefreq>
     </url>
+    {% endfor %}
     {% endfor %}
 </urlset>

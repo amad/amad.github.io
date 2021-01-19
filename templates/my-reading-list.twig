@@ -13,10 +13,11 @@ permalink: /my-reading-list.html
         <ul class="">
             {% for book in category %}
             <li class="pb-2 pt-3 ml-2 post-item">
-                <a href="{{ book.url }}">
+                <a href="{{ book.link }}">
                     <span class="d-inline font-weight-bold">{{ book.title }}</span>
                 </a>
-                <span class="text-right">{{ book.description }}</span>
+                <span class="font-italic font-weight-light"><small>By {{ book.authors }}</small></span>
+                <span class="text-right"> - {{ book.description }}</span>
             </li>
             {% endfor %}
         </ul>

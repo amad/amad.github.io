@@ -4,26 +4,33 @@
         <title>Ahmad Samiei</title>
         <link>https://amad.github.io/</link>
         <description>Ahmad Samiei technical blog</description>
-                    <item>
-                <title></title>
-                <link></link>
-                <guid></guid>
-                <pubDate>Mon, 25 May 2020</pubDate>
-                <description></description>
+                            <item>
+                <title>Why you should not catch Throwable in the business logic</title>
+                <link>https://amad.github.io/blog/do_not_catch_throwable_in_the_business_logic.html</link>
+                <guid>https://amad.github.io/blog/do_not_catch_throwable_in_the_business_logic.html</guid>
+                <pubDate>Tue, 16 Oct 2018</pubDate>
+                <description>Why you should not catch Throwable in the business logic</description>
             </item>
                     <item>
-                <title></title>
-                <link></link>
-                <guid></guid>
-                <pubDate>Mon, 25 May 2020</pubDate>
-                <description></description>
+                <title>Guide to effective pair programming</title>
+                <link>https://amad.github.io/blog/effective-pair-programming.html</link>
+                <guid>https://amad.github.io/blog/effective-pair-programming.html</guid>
+                <pubDate>Wed, 30 May 2018</pubDate>
+                <description>Guide to effective pair programming</description>
             </item>
-                    <item>
-                <title></title>
-                <link></link>
-                <guid></guid>
-                <pubDate>Mon, 25 May 2020</pubDate>
-                <description></description>
+                                    <item>
+                <title>Tips for schemaless design</title>
+                <link>https://amad.github.io/blog/going-schemaless.html</link>
+                <guid>https://amad.github.io/blog/going-schemaless.html</guid>
+                <pubDate>Mon, 06 Mar 2017</pubDate>
+                <description>Tips for schemaless design</description>
             </item>
-            </channel>
+                                    <item>
+                <title>Git friendly terminal</title>
+                <link>https://amad.github.io/blog/git-friendly-terminal.html</link>
+                <guid>https://amad.github.io/blog/git-friendly-terminal.html</guid>
+                <pubDate>Thu, 09 Jun 2016</pubDate>
+                <description>Git friendly terminal</description>
+            </item>
+                    </channel>
 </rss>
