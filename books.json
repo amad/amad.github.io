@@ -1,6 +1,12 @@
 {
   "Engineering": [
     {
+      "title": "Operations Anti-Patterns, DevOps Solutions",
+      "link": "https://www.manning.com/books/operations-anti-patterns-devops-solutions",
+      "authors": "Jeffery D. Smith",
+      "description": "Operations Anti-Patterns, DevOps Solutions shows how to implement DevOps techniques in the kind of imperfect environments most developers work in. Part technology tutorial, part reference manual, and part psychology handbook, this practical guide shows you realistic ways to bring DevOps to your team when you don't have the flexibility to make sweeping changes in organizational structure."
+    },
+    {
       "title": "Microservices AntiPatterns and Pitfalls",
       "link": "https://www.goodreads.com/book/show/31291348-microservices-antipatterns-and-pitfalls",
       "authors": "Mark Richards",
@@ -101,6 +107,12 @@
       "link": "https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer",
       "authors": "Andy Hunt, Dave Thomas",
       "description": "Ward Cunningham Straight from the programming trenches, The Pragmatic Programmer cuts through the increasing specialization and technicalities of modern software development to examine the core process taking a requirement and producing working, maintainable code that delights its users."
+    },
+    {
+      "title": "The Phoenix Project",
+      "link": "https://www.goodreads.com/book/show/17255186-the-phoenix-project",
+      "authors": "Gene Kim, Kevin Behr, George Spafford",
+      "description": "A Novel About IT, DevOps, and Helping Your Business Win is the third book by Gene Kim. The business novel tells the story of an IT manager who has ninety days to rescue an over-budget and late IT initiative, code-named The Phoenix Project."
     },
     {
       "title": "Domain-Specific Languages",
@@ -279,6 +291,12 @@
       "link": "https://www.thoughtworks.com/podcasts",
       "authors": "Thoughtworks",
       "description": "From deep technical topics to digital transformation and innovation, our podcasts feature captivating conversations on the latest in business and tech. Explore and listen in your own time, on the channel of your choice."
+    },
+    {
+      "title": "Software Engineering Radio",
+      "link": "https://www.se-radio.net/",
+      "authors": "SE Radio",
+      "description": "IEEE Software offers pioneering ideas, expert analyses, and thoughtful insights for software professionals who need to keep up with rapid technology change. It's the authority on translating software theory into practice."
     },
     {
       "title": "Darknet Diaries",
