@@ -1,10 +1,122 @@
 body {
   font-family: inter ui,-apple-system,BlinkMacSystemFont,roboto,segoe ui,Helvetica,Arial,sans-serif;
-  color: #000000;
+  background-color: #faf8f1;
+  color: #000;
+}
+
+body[data-theme="light"] {
+  background-color: #faf8f1;
+  color: #000;
+
+  header {
+    background-color: #faf8f1;
+  }
+
+  .posts {
+    a {
+      color: #171717;
+    }
+
+    .post-item {
+      border-bottom: 1px gray dashed;
+    }
+  }
+
+  .post {
+    blockquote {
+      border-left: 4px solid #666;
+      p {
+        color: #666;
+      }
+    }
+
+    h1 {
+      a {
+        color: #222;
+      }
+    }
+  }
+
+  p > code {
+    background-color: rgba(27, 31, 35, 0.05);
+    color: #000;
+  }
+
+  .prettyprint {
+    background-color: #f6f8fa;
+  }
+
+  .pln {
+    color: #333;
+  }
+}
+
+body[data-theme="dark"] {
+  background-color: #11111b;
+  color: #ffffff;
+
+  header {
+    background-color: #11111b;
+  }
+
+  .posts {
+    a {
+      color: #fffafa;
+    }
+
+    .post-item {
+      border-bottom: 1px gray dashed;
+    }
+  }
+
+  .post {
+    blockquote {
+      border-left: 4px solid #bbb;
+
+      p {
+        color: #bbb;
+      }
+    }
+
+    h1 {
+      a {
+        color: #222;
+      }
+    }
+  }
+
+  p > code {
+    background-color: rgba(221, 238, 255, 0.1);
+    background-color: #252739;
+    color: #fff;
+    color: #cbd3f2;
+  }
+
+  .prettyprint {
+    background-color: #252739;
+  }
+
+  .pln {
+    color: #c9d0eb;
+  }
+
+  input[type=search] {
+    background-color: #2b2b2b;
+    border-color: #495057;
+  }
+
+  input[type=submit] {
+    background-color: #6c757d;
+    color: #fff;
+  }
+
+  input[type=submit]:hover {
+    background-color: #495057;
+  }
 }
 
 header {
-  background-color: #fafafa;
+  background-color: #faf8f1;
 
   nav {
     align-items: baseline;
@@ -189,4 +301,104 @@ li.L9 {
       color: #900;
     }
   }
+
+  [data-theme="dark"] {
+    pre {
+      .str {
+        color: #a8d39e;
+      }
+
+      .kwd {
+        color: #a71d5d;
+      }
+
+      .com {
+        color: #969896;
+      }
+
+      .typ {
+        color: #0086b3;
+      }
+
+      .lit {
+        color: #0086b3;
+      }
+
+      .pun {
+        color: #ccc;
+      }
+
+      .opn {
+        color: #ccc;
+      }
+
+      .clo {
+        color: #ccc;
+      }
+
+      .tag {
+        color: #ffffff;
+      }
+
+      .atn {
+        color: #795da3;
+      }
+
+      .atv {
+        color: #183691;
+      }
+
+      .dec {
+        color: #eee;
+      }
+
+      .var {
+        color: #008080;
+      }
+
+      .fun {
+        color: #900;
+      }
+    }
+  }
 }
+
+// .toggle {
+//   position: absolute;
+//   top: 20px;
+//   right: 20px;
+// }
+
+// .toggle input {
+//   display: none;
+// }
+
+// .toggle label {
+//   cursor: pointer;
+//   display: inline-block;
+//   width: 60px;
+//   height: 34px;
+//   position: relative;
+//   background-color: #ccc;
+//   border-radius: 17px;
+// }
+
+// .toggle label:after {
+//   content: "";
+//   position: absolute;
+//   width: 30px;
+//   height: 30px;
+//   border-radius: 50%;
+//   background-color: #fff;
+//   top: 2px;
+//   left: 2px;
+//   transition: transform 0.3s ease;
+// }
+
+// .toggle input:checked+label {
+//   background-color: #2196f3;
+// }
+
+// .toggle input:checked+label:after {
+//   transform: translateX(26px);
+// }

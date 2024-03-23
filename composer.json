@@ -1,8 +1,13 @@
 {
     "require": {
-        "twig/twig": "~1.0",
-        "erusev/parsedown": "^1.6",
-        "illuminate/support": "^5.2",
+        "twig/twig": "~3.8",
+        "erusev/parsedown": "^1.7",
+        "illuminate/support": "^11.0",
         "pagerange/metaparsedown": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
     }
 }

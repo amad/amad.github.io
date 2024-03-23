@@ -11,13 +11,12 @@
     <link rel="dns-prefetch" href="https://google-analytics.com">
     <link rel="alternate" href="/" hreflang="en-us" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/app.min.css?v=efd07f2cdbb333fbea3c1fa71047ac3b">
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="stylesheet" media="screen, tv, handheld" href="/assets/css/app.min.css?v=409e5807ac4432cf418cf3616dd8fe23">
+    <link rel="shortcut icon" media="screen, tv, handheld" type="image/png" href="/favicon.ico"/>
+    <link rel="icon" media="screen, tv, handheld" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="icon" media="screen, tv, handheld" href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" type="image/gif">
 </head>
-<body>
+<body data-theme="light">
     <header class="blog-header py-3">
         <div class="container">
             <div class="row flex-nowrap justify-content-between align-items-center">
@@ -32,6 +31,7 @@
                         <a class="p-2" href="http://github.com/amad"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77a5.44 5.44.0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"></path></svg></a>
                         <a class="p-2" href="http://linkedin.com/in/ahmadsamiei/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
                         <a class="p-2" href="/rss.xml"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+                        <a class="p-4 pl-4" id="toggler" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 100 110" fill="currentcolor" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.67 50A27.33 27.33 0 1 0 50 22.67 27.34 27.34 0 0 0 22.67 50zm27.59-20.17a20.43 20.43 0 0 1 0 40.86zM52 17.06V4.8a2.3 2.3 0 1 0-4.59 0v12.26a2.3 2.3 0 0 0 4.59 0zm31.37 2.42a2.3 2.3 0 0 0-3.25-3.25l-8.63 8.67a2.3 2.3 0 0 0 3.25 3.25zM82.94 52H95.2a2.3 2.3 0 1 0 0-4.59H82.94a2.3 2.3 0 0 0 0 4.59zM71.85 71.49a2.29 2.29 0 0 0 0 3.25l8.67 8.67a2.31 2.31 0 0 0 3.25 0 2.29 2.29 0 0 0 0-3.25l-8.67-8.67a2.29 2.29 0 0 0-3.25 0zM48 82.94V95.2a2.3 2.3 0 1 0 4.59 0V82.94a2.3 2.3 0 0 0-4.59 0zm-31.41-2.42a2.3 2.3 0 0 0 1.63 3.92 2.27 2.27 0 0 0 1.62-.67l8.67-8.67a2.3 2.3 0 0 0-3.25-3.25zM2.5 50.26a2.3 2.3 0 0 0 2.3 2.29h12.26a2.3 2.3 0 0 0 0-4.59H4.8a2.3 2.3 0 0 0-2.3 2.3zm25.65-21.75a2.29 2.29 0 0 0 0-3.25l-8.67-8.67a2.3 2.3 0 0 0-3.25 3.25l8.67 8.67a2.31 2.31 0 0 0 3.25 0z"/></svg></a>
                     </nav>
                 </div>
             </div>
@@ -236,7 +236,7 @@ throwable from a handler. So a user using this client won't miss any message eve
             <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8 comments">
                 <div id="disqus_thread"></div>
-                <script>
+                <script defer>
                     var disqus_config = function () {
                         this.page.url = "https://amad.github.io/blog/do_not_catch_throwable_in_the_business_logic.html";
                         this.page.identifier = "/blog/do_not_catch_throwable_in_the_business_logic.html";
@@ -265,7 +265,7 @@ throwable from a handler. So a user using this client won't miss any message eve
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true" defer="defer"></script>
 <script id="dsq-count-scr" src="//samiei-org.disqus.com/count.js" async></script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<script>
+<script defer>
     if (window.location.hostname !== 'localhost') {
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -274,6 +274,37 @@ throwable from a handler. So a user using this client won't miss any message eve
         ga('create', 'UA-69085808-1', 'auto');
         ga('send', 'pageview');
     }
+</script>
+<script>
+    const togglerSwitch = document.querySelector("#toggler");
+    const currentTheme = localStorage.getItem("theme");
+    const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (currentTheme) {
+        document.body.setAttribute("data-theme", currentTheme);
+    if (currentTheme === "dark") {
+        document.body.setAttribute("data-theme", "dark");
+    }
+    } else if (prefersDarkScheme) {
+        document.body.setAttribute("data-theme", "dark");
+    }
+
+    function switchTheme(e) {
+        e.preventDefault();
+
+        const theme = document.body.getAttribute("data-theme");
+        if (theme == "dark") {
+            document.body.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        } else {
+            document.body.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+        }
+    }
+
+    togglerSwitch.addEventListener("click", switchTheme);
 </script>
 </body>
 </html>

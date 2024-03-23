@@ -7,7 +7,7 @@ use Symfony\Component\Yaml\Yaml;
 require_once 'vendor/autoload.php';
 
 $config = Yaml::parseFile('config.yml');
-$twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'));
+$twig = new Twig\Environment(new Twig\Loader\FilesystemLoader('templates'));
 $markdownParser = new MetaParsedown;
 $assetHash = \md5(\file_get_contents(__DIR__ . '/../assets/css/app.min.css'));
 $books =  json_decode(\file_get_contents('books.json'), true);
@@ -30,10 +30,10 @@ $posts = collect(\glob('markdown/*.md'))
         if (isset($post['meta']['redirect_from'])) {
             \file_put_contents(
                 '.' . $post['meta']['redirect_from'],
-                $twig->loadTemplate('redirect.twig')->render($post)
+                $twig->load('redirect.twig')->render($post)
             );
         }
-        \file_put_contents('.' . $post['meta']['permalink'], $twig->loadTemplate('post.twig')->render($post));
+        \file_put_contents('.' . $post['meta']['permalink'], $twig->load('post.twig')->render($post));
     })->reduce(
         function ($carry, $post) {
             $carry[date('Y', $post['meta']['date'])][] = $post;
