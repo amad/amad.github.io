@@ -1,15 +1,15 @@
 body {
   font-family: inter ui,-apple-system,BlinkMacSystemFont,roboto,segoe ui,Helvetica,Arial,sans-serif;
-  background-color: #faf8f1;
+  background-color: #e8e3d1;
   color: #000;
 }
 
 body[data-theme="light"] {
-  background-color: #faf8f1;
+  background-color: #e8e3d1;
   color: #000;
 
   header {
-    background-color: #faf8f1;
+    background-color: #e8e3d1;
   }
 
   .posts {
@@ -52,11 +52,11 @@ body[data-theme="light"] {
 }
 
 body[data-theme="dark"] {
-  background-color: #11111b;
+  background-color: #0f3234;
   color: #ffffff;
 
   header {
-    background-color: #11111b;
+    background-color: #0f3234;
   }
 
   .posts {
@@ -116,7 +116,7 @@ body[data-theme="dark"] {
 }
 
 header {
-  background-color: #faf8f1;
+  background-color: #e8e3d1;
 
   nav {
     align-items: baseline;
